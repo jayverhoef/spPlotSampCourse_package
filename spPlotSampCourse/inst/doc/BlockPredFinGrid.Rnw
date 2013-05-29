@@ -1,0 +1,5 @@
+%\VignetteIndexEntry{Block Prediction for Finite Populations}
+\documentclass{article}
+\begin{document}
+\end{document}
+

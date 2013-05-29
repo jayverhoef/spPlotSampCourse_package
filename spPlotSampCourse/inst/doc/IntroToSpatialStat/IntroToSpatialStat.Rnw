@@ -1,0 +1,1132 @@
+\documentclass[mathserif,compress]{beamer} 
+\usepackage{beamerthemeDresden} 
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{palatino}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{pgf}
+\usepackage{relsize}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\bit{\begin{itemize}}
+\def\eit{\end{itemize}}
+\def\bdm{\begin{displaymath}}
+\def\edm{\end{displaymath}}
+\def\ben{\begin{enumerate}}
+\def\een{\end{enumerate}}
+\def\bc{\mathbf{c}}
+\def\bh{\mathbf{h}}
+\def\br{\mathbf{r}}
+\def\bs{\mathbf{s}}
+\def\bu{\mathbf{u}}
+\def\bw{\mathbf{w}}
+\def\bx{\mathbf{x}}
+\def\by{\mathbf{y}}
+\def\bz{\mathbf{z}}
+\def\bA{\mathbf{A}}
+\def\bD{\mathbf{D}}
+\def\bG{\mathbf{G}}
+\def\bI{\mathbf{I}}
+\def\bQ{\mathbf{Q}}
+\def\bR{\mathbf{R}}
+\def\bS{\mathbf{S}}
+\def\bV{\mathbf{V}}
+\def\bW{\mathbf{W}}
+\def\bX{\mathbf{X}}
+\def\bY{\mathbf{Y}}
+\def\bZ{\mathbf{Z}}
+\def\cB{\mathcal{B}}
+\def\cF{\mathcal{F}}
+\def\cI{\mathcal{I}}
+\def\cK{\mathcal{K}}
+\def\cU{\mathcal{U}}
+\def\bbeta{\mbox{\boldmath $\beta$}}
+\def\bepsilon{\mbox{\boldmath $\epsilon$}}
+\def\bdelta{\mbox{\boldmath $\delta$}}
+\def\bgamma{\mbox{\boldmath $\gamma$}}
+\def\bldeta{\mbox{\boldmath $\eta$}}
+\def\bphi{\mbox{\boldmath $\phi$}}
+\def\bkappa{\mbox{\boldmath $\kappa$}}
+\def\blambda{\mbox{\boldmath $\lambda$}}
+\def\bmu{\mbox{\boldmath $\mu$}}
+\def\bnu{\mbox{\boldmath $\nu$}}
+\def\btheta{\mbox{\boldmath $\theta$}}
+\def\brho{\mbox{\boldmath $\rho$}}
+\def\bDelta{\mbox{\boldmath $\Delta$}}
+\def\bLambda{\mbox{\boldmath $\Lambda$}}
+\def\bSigma{\mbox{\boldmath $\Sigma$}}
+\def\var{\textrm{var}}
+\def\cov{\textrm{cov}}
+\def\log{\textrm{log}}
+\def\median{\textrm{median}}
+\def\argmin{\textrm{arg min }}
+\def\bzero{\mathbf{0}}
+\def\bone{\mathbf{1}}
+\def\Poi{\textrm{Poi}}
+\def\Unif{\textrm{Unif}}
+\def\upp{^\prime}
+\def\upi{^{-1}}
+\newcommand{\cye}[1]{\color{yellow!70!black}#1}
+\newcommand{\cre}[1]{\color{red!70!black}#1}
+\newcommand{\cbl}[1]{\color{blue!70!black}#1}
+\newcommand{\cgr}[1]{\color{green!70!black}#1}
+\begin{document}
+<<setup, include=FALSE, cache=FALSE>>=
+# set global chunk options
+opts_chunk$set(fig.align='center', size = 'tiny')
+purl("IntroToSpatialStat.Rnw") ## Dump all R code to a file
+@
+\title[]{Introduction to Spatial Statistics}
+
+\author[Jay M. Ver Hoef]{Jay Ver Hoef} 
+
+\institute[NOAA National Marine Mammal Lab]
+{
+	\normalsize National Marine Mammal Lab \\
+	NOAA Fisheries \\
+	International Arctic Research Center \\
+	Fairbanks, Alaska, USA\\
+	\vspace{0.1cm}
+}
+\date[05/17/13]{}
+ 
+\maketitle
+ 
+% very important to use option [fragile] for frames containing code output!
+%-------------------------------------------------------------------------------
+%                        OUTLINE
+%-------------------------------------------------------------------------------
+
+\section{Introduction}
+\subsection{}
+\begin{frame} [fragile]
+\frametitle{Outline}
+   
+	\begin{tabular} {p{3.8cm} p{5.8cm}}
+
+		\begin{center}
+		\vspace{-.3cm}
+		\bit
+			\item Introduction     
+			\item Autocorrelation         
+			\item Types of Spatial Data    
+			\item Prediction    
+			\item Regression 
+			\item Design of Experiments 
+			\item Sampling 
+			\item Summary
+		\eit
+	\end{center}
+ &
+		\vspace{-1.4cm}
+		<<echo = FALSE, include = FALSE>>=
+		library(spPlotSampCourse)
+		library(sp)
+		library(maptools)
+		library(xtable)
+		@
+
+		<<echo = FALSE, cache = TRUE>>=
+		path <- system.file("rawdata/airPolluteCA", package = "spPlotSampCourse")
+		pointsFile <- paste(path,"/","ca_ozone_pts", sep = "")
+		pts <- readShapePoints(pointsFile)
+		outlineFile <- paste(path,"/","ca_outline", sep = "")
+		otl <- readShapePoly(outlineFile)
+
+		ozFit1 <- splmm(OZONE ~ 1, spdata = pts, estMeth = "REML",
+			varComps = "circular", useAnisotropy = TRUE)
+		pGrid <- createPredGrid(otl)
+		pGrid <- SpatialPointsDataFrame(pGrid, 
+			as.data.frame(matrix(NA, nrow = length(pGrid), ncol = 1)))
+		ozPred1 <- predict(ozFit1, pGrid)
+		@
+
+		<<CA-predMap, fig.width=4, fig.height=6, echo = FALSE, fig.keep = 'last'>>=
+		par(mar = c(0,0,0,0))
+		layout(matrix(1:2, nrow = 1), width = c(2,1))
+		plot(otl)
+		minmaxDF <- plotPointsRGBT(ozPred1, colorCol = "OZONE.pred", 
+			tranCol = "OZONE.predSE", pch = 15, cex = .4, add = TRUE,
+			rlim = c(0,1), glim = c(0,0), blim = c(1,0), tlim = c(0,1))
+		plot(pts, add = TRUE, pch = 19, col = "yellow", cex = .6)
+		SpatialPolygonsRescale(layout.scale.bar(), offset = c(-2310720,-327847.8),
+			scale = 100000, fill = c("transparent","black"), plot.grid = FALSE)
+		text(-2309651,-306484.6,"0", cex = .7)
+		text(-2212377, -305416.5,"100 km", cex = .7)
+		SpatialPolygonsRescale(layout.north.arrow(), offset = c(-1820073,743516.4),
+			scale = 80000, col = "green", plot.grid = FALSE)
+		plot(c(0,1), c(0,1), type = "n", xlab = "", ylab = "", bty = "n",
+			xaxt = "n", yaxt = "n")
+		addRGBRampLegend(minmaxDF["colorValue","min"], minmaxDF["colorValue","max"],
+			.2, .2, .4, .4, printFormat = "0.4", cex = .8)
+		text(.45,.46, labels = "Predicted Ozone \n Concentration", cex = .9)
+		addTRampLegend(minmaxDF["transparency","min"], 
+			minmaxDF["transparency","max"], .2, .55, .4, .75, 
+			rval = .5, gval = 0, bval = .5, tlim = c(0, 1), printFormat = "0.4", cex = .8)
+		text(.45,.81, labels = "Standard Error \n of Predictions", cex = .9)
+	@
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                        What Are Statistics?
+%-------------------------------------------------------------------------------
+
+\begin{frame} 
+\frametitle{What are Statistics?}
+     
+	\begin{tabular} {p{4.5cm} p{4.5cm}}
+
+			{\bdm
+				\bar{z} = \frac{1}{n}\sum_{i = 1}^n z_i 
+			\edm} &
+			\vspace{.2cm}
+			{A statistic is a function of data} 
+		  \\
+		
+		\begin{center}
+		  \vspace{-.5cm}
+			\includegraphics[width=4.0cm]{figure/pieChart.jpeg} 
+		  \vspace{.5cm}
+		\end{center} &
+		\begin{center}
+			\includegraphics[width=4.4cm]{figure/voteMap.jpg} 
+		  \vspace{.5cm}
+		\end{center} 
+		
+
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                        What Are Statistics?
+%-------------------------------------------------------------------------------
+
+\begin{frame} 
+\frametitle{Statistical Models and Inference}
+     
+		\begin{center}
+		  \vspace{-.5cm}
+			\includegraphics[width=10.4cm]{figure/statModInfer.jpeg} 
+		\end{center} 
+\end{frame}
+  
+%-------------------------------------------------------------------------------
+%                        What is a Model?
+%-------------------------------------------------------------------------------
+
+\begin{frame} 
+\frametitle{What is a Model?}
+     
+	\begin{tabular} {p{4.5cm} p{4.5cm}}
+		
+		\begin{center}
+			\includegraphics[width=4.0cm]{figure/airplane1.jpg} 
+		\end{center} &
+		\begin{center}
+			\includegraphics[width=4.0cm]{figure/airplane2.jpg} 
+		\end{center} \\
+
+	\bit
+		\item{{\color{green!70!black}What does it look like?}} 
+		\item{{\color{green!70!black}Structural}} 
+	\eit &
+	\bit
+		\item{{\color{blue!70!black}How does it work?}}
+		\item{{\color{blue!70!black}Functional}}
+	\eit
+
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                        What Are Statistics?
+%-------------------------------------------------------------------------------
+
+\begin{frame} 
+\frametitle{Spatial Statistical Models and Inference}
+     
+		\begin{center}
+		  \vspace{-.5cm}
+			\includegraphics[width=10.4cm]{figure/repSpModInfer.jpg} 
+		\end{center} 
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                         Linear Model
+%-------------------------------------------------------------------------------
+
+\begin{frame} 
+\frametitle{Spatial Linear Model}
+     
+	\begin{tabular} {p{4.5cm} p{.5cm} p{4.5cm}}
+		\vspace{-.2cm} \[ z_i \] & \vspace{.1cm}  = & \vspace{-.6cm}
+			\[\beta_0 + x_{1,i}\beta_1 + x_{2,i}\beta_2 + \ldots + \epsilon_i \] \\
+		\vspace{-.6cm} \[ z_{j,k,i} \] & \vspace{-.3cm} = &  \vspace{-1cm}
+			\[\beta_0 + \tau_{j} + \delta_{k} + (\tau\delta)_{j,k} + 
+			\ldots + \epsilon_{j,k,i} 	\] \\
+		\vspace{-.6cm} \[
+			\left(\begin{array}{c}	
+					\bz_{\textrm{observed}} \\
+					{\color{green!70!black} \bz_{\textrm{unobserved}}}
+				\end{array} \right) 
+		\] & \vspace{-.2cm} = & 
+		\vspace{-.9cm} \[\bX{\color{yellow!70!black}\bbeta} + 
+			\bepsilon, \ \var(\bepsilon) = \bSigma({\color{red!70!black}\btheta}) \] \\
+		\bit
+			\item{{\color{green!70!black}Point Prediction}} 
+			\item{{\color{green!70!black}Block Prediction}} 
+			\item{{\color{green!70!black}Sampling}} 
+		\eit & &
+		\bit
+			\item{{\color{yellow!70!black}Regression}} 
+			\item{{\color{yellow!70!black}Design of Experiments}}
+		\eit
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                        What Are Statistics?
+%-------------------------------------------------------------------------------
+
+\begin{frame} 
+\frametitle{Covariance Matrix in Spatial Linear Models}
+    
+	\vspace{.2cm}
+	\begin{tabular} {p{5cm} p{4cm}}
+		\multicolumn{2}{c}{Reduce the number of parameters in the probability model} \\
+		 \multicolumn{2}{c}{by using spatial relationships} \\
+		\vspace{-.5cm}
+		\begin{equation*} 
+			 \bSigma = \left( \begin{array}{cccc}
+				\sigma_{1,1} & \sigma_{1,2} & \cdots & \sigma_{1,n} \\
+				\sigma_{2,1} & \sigma_{2,2} & \cdots & \sigma_{2,n} \\
+				\vdots & \vdots & \cdots & \vdots \\
+				\sigma_{n,1} & \sigma_{n,2} & \cdots & \sigma_{n,n} 
+			\end{array} \right)
+		\end{equation*} &
+
+ 		\vspace{-.1cm}
+		<<autCovGraph, fig.width=6, fig.height = 4, echo = FALSE>>=
+			par(mar = c(4,5,1,1))
+			plot(c(0,85),c(0,5), type = "n", xlab = "Distance", ylab = "Covariance",
+				cex.lab = 2, cex.axis = 1.5)
+			#nugget effect lines
+			lines(c(0,5),c(4.04,4.04), lwd = 1)
+			lines(c(5,5),c(4.04,5), lwd = 1)
+			lines(c(0,5),c(5,5), lwd = 1)
+			lines(c(5,7),c(4.5,4.5), lwd = 1)
+			text(6,4.5,"Nugget", cex = 2, pos = 4)
+			#partial sill effect lines
+			lines(c(0,5),c(3.96,3.96), lwd = 1)
+			lines(c(5,5),c(0,3.96), lwd = 1)
+			lines(c(.5,5),c(0,0), lwd = 1)
+			lines(c(5,20),c(2,2), lwd = 1)
+			text(20,2,"Partial Sill", cex = 2, pos = 4)
+			#range lines
+			lines(c(0,0),c(0.04,0.2), lwd = 1)
+			lines(c(0,66),c(0.2,0.2), lwd = 1)
+			lines(c(66,66),c(0.2,0.1), lwd = 1)
+			lines(c(33,40),c(0.2,1), lwd = 1)
+			text(40,1,"Range", cex = 2, pos = 4)
+			#sill lines
+			lines(c(67,70),c(0,0), lwd = 1)
+			lines(c(70,70),c(0,5), lwd = 1)
+			lines(c(67,70),c(5,5), lwd = 1)
+			lines(c(70,75),c(2.5,2.5), lwd = 1)
+			text(75,2.5,"Sill", cex = 2, pos = 4)
+			#plot the curve and point
+			lines(0:85, 4*exp(-(0:85)/15), lwd = 5, col = "blue")
+			points(0,5, pch = 19, cex = 1, col = "blue")
+		@
+ 		\\
+		\vspace{-.8cm}
+		\hspace{1cm} 
+		\includegraphics[width=2.8cm]{figure/sCalOzoneDistances1.jpg} &
+		\vspace{-.8cm}
+		\includegraphics[width=2.8cm]{figure/sCalOzoneDistances2.jpg} 
+
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                         Autocorrelation
+%-------------------------------------------------------------------------------
+\section{Autocorrelation}
+\subsection{}
+\begin{frame} [fragile]
+\frametitle{The Many Faces of ``Autocorrelation'': DATA}
+     
+	<<AutoCor-DataFig, fig.width=11, fig.height=6, out.width='.7\\linewidth', fig.align='center', size = 'tiny'>>=
+		x <- 1:100
+		z <- 6 - ((x - 50)/20)^2 + rnorm(100)
+		plot(x, z, pch = 19, cex = 2, cex.lab = 2, cex.axis = 1.5)
+	@
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                         Autocorrelation
+%-------------------------------------------------------------------------------
+\begin{frame} [fragile]
+\frametitle{The Many Faces of ``Autocorrelation'': MODEL}
+     
+	<<AutoCor-ModelFig, fig.width=11, fig.height=6, out.width='.7\\linewidth', fig.align='center', size = 'tiny'>>=
+		x <- 1:100
+		gamma <- exp(-x/50)
+		plot(x, gamma, type = "l", lwd = 2, cex.lab = 2, cex.axis = 1.5, col = "blue")
+	@
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                         Autocorrelation
+%-------------------------------------------------------------------------------
+\begin{frame} [fragile]
+\frametitle{The Many Faces of ``Autocorrelation'': PROCESS}
+     
+	<<AutoCor-ProcessFig, fig.width=11, fig.height=6, out.width='.7\\linewidth', fig.align='center', size = 'tiny'>>=
+		set.seed(4)
+		x <- 1:100
+		y <- rep(1, times = 100)
+		xyz <- geoStatSim(x,y, range = 100, nugget = .01, parsil = 6)
+		plot(xyz$x, xyz$z, pch = 19, cex = 2, cex.lab = 2, cex.axis = 1.5)
+	@
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                         Autocorrelation
+%-------------------------------------------------------------------------------
+\begin{frame} [fragile]
+\frametitle{The Many Faces of ``Autocorrelation'': STATISTIC}
+     
+	<<AutoCor-StatisticFig, fig.width=11, fig.height=6, out.width='.7\\linewidth', fig.align='center', size = 'tiny'>>=
+		spDF <- SpatialPointsDataFrame(cbind(xyz$x,xyz$y),data.frame(z = xyz$z))
+		esv <- empSemivariogram(spDF,"z",EmpVarMeth = "CovMean")
+		plot(esv$hx, esv$gamma, pch = 19, cex = esv$np/100, cex.lab = 2, cex.axis = 1.5)
+	@
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                    Estimation Versus Prediction
+%-------------------------------------------------------------------------------
+\begin{frame} [fragile]
+\frametitle{Estimation Versus Prediction}
+	$E(\bz,Z_0) = \bone\mu, \quad \cov(\bz,Z_0) = \left(
+		\begin{array}{cc}
+			\bSigma & \bc \\
+			\bc\upp & \sigma_0^2
+		\end{array} \right)$ \\
+  data mean = $\bone\upp\bz/n$ \\
+	variance as estimator of $\mu$ = $\bone\upp\bSigma\bone/n^2$  \\
+	variance as predictor = $E(\bone\upp\bz/n - Z_0)^2 = \bone\upp\bSigma\bone/n^2 -2\bone\upp\bc/n + \sigma_0^2$
+	<<size = 'tiny'>>=
+		# Independence
+		SigmaInd <- diag(6)
+		# variance of mean estimator for first 5
+		sum(SigmaInd[1:5,1:5])/5^2
+		# variance of first 5 to predict the 6th
+		sum(SigmaInd[1:5,1:5])/5^2 - 2*sum(SigmaInd[6,1:5])/5 + SigmaInd[6,6]
+	@
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                    Estimation Versus Prediction
+%-------------------------------------------------------------------------------
+\begin{frame} [fragile]
+\frametitle{Estimation Versus Prediction}
+	$E(\bz,Z_0) = \bone\mu, \quad \cov(\bz,Z_0) = \left(
+		\begin{array}{cc}
+			\bSigma & \bc \\
+			\bc\upp & \sigma_0^2
+		\end{array} \right)$ \\
+  data mean = $\bone\upp\bz/n$ \\
+	variance as estimator of $\mu$ = $\bone\upp\bSigma\bone/n^2$  \\
+	variance as predictor = $E(\bone\upp\bz/n - Z_0)^2 = \bone\upp\bSigma\bone/n^2 -2\bone\upp\bc/n + \sigma_0^2$
+	<<size = 'tiny'>>=
+		#lots of autocorrelation
+		SigmaAC <- matrix(.9999, nrow = 6, ncol = 6); diag(SigmaAC) <- 1
+		# variance of mean estimator for first 5
+		sum(SigmaAC[1:5,1:5])/5^2
+		# variance of first 5 to predict the 6th
+		sum(SigmaAC[1:5,1:5])/5^2 - 2*sum(SigmaAC[6,1:5])/5 + SigmaAC[6,6]
+	@
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                    Estimation Versus Prediction
+%-------------------------------------------------------------------------------
+\begin{frame} [fragile]
+\frametitle{Estimation Versus Prediction}
+\tiny
+	\vspace{.2cm}
+	\begin{tabular} {p{4.5cm} p{4.5cm}}
+		$\left(\begin{array}{rrrrrr}
+				1.0000 & 0.9999 & 0.9999 & 0.9999 & 0.9999 & 0.9999 \\ 
+				0.9999 & 1.0000 & 0.9999 & 0.9999 & 0.9999 & 0.9999 \\ 
+				0.9999 & 0.9999 & 1.0000 & 0.9999 & 0.9999 & 0.9999 \\ 
+				0.9999 & 0.9999 & 0.9999 & 1.0000 & 0.9999 & 0.9999 \\ 
+				0.9999 & 0.9999 & 0.9999 & 0.9999 & 1.0000 & 0.9999 \\ 
+				0.9999 & 0.9999 & 0.9999 & 0.9999 & 0.9999 & 1.0000  
+		\end{array}\right)$ &
+		\hspace{1.5cm} $\left(\begin{array}{rrrrrr}
+				1 & 0 & 0 & 0 & 0 & 0 \\ 
+				0 & 1 & 0 & 0 & 0 & 0 \\ 
+				0 & 0 & 1 & 0 & 0 & 0 \\ 
+				0 & 0 & 0 & 1 & 0 & 0 \\ 
+				0 & 0 & 0 & 0 & 1 & 0 \\ 
+				0 & 0 & 0 & 0 & 0 & 1 
+ 		\end{array}\right)$ 
+	\end{tabular}
+	<<size = 'tiny', fig.keep = "none">>=
+	set.seed(18)
+	z.AC <- t(chol(SigmaAC)	) %*% rnorm(6)
+	z.ind <- t(chol(SigmaInd)	) %*% rnorm(6)
+	plot(1:5, z.AC[1:5], ylim = c(-3,3), xlim = c(1,6), pch = 19, cex = 2, col = "green")
+	points(6, z.AC[6], pch = 19, cex = 2, col = "red")
+	lines(c(0,6),c(0,0), lwd = 3)
+	plot(1:5, z.ind[1:5], ylim = c(-3,3), xlim = c(1,6), pch = 19, cex = 2, col = "green")
+	points(6, z.ind[6], pch = 19, cex = 2, col = "red")
+	lines(c(0,6),c(0,0), lwd = 3, pch = 19, cex = 2)
+	@
+	<<AutoCor-EstPredFig, include = FALSE, fig.width=5, fig.height=4, out.width='.35\\linewidth', fig.show='hold'>>=
+	set.seed(18)
+	z.AC <- t(chol(SigmaAC)	) %*% rnorm(6)
+	z.ind <- t(chol(SigmaInd)	) %*% rnorm(6)
+	plot(1:5, z.AC[1:5], ylim = c(-3,3), xlim = c(1,6), pch = 19, cex = 2, col = "green")
+	points(6, z.AC[6], pch = 19, cex = 2, col = "red")
+	lines(c(0,6),c(0,0), lwd = 3)
+	plot(1:5, z.ind[1:5], ylim = c(-3,3), xlim = c(1,6), pch = 19, cex = 2, col = "green")
+	points(6, z.ind[6], pch = 19, cex = 2, col = "red")
+	lines(c(0,6),c(0,0), lwd = 3, pch = 19, cex = 2)
+	@
+	\begin{tabular} {p{4.5cm} p{4.5cm}}
+		\begin{center}
+		  \vspace{-1.3cm}
+			\includegraphics[width=4.0cm]{figure/AutoCor-EstPredFig1} 
+		\end{center} &
+		\begin{center}
+		  \vspace{-1.3cm}
+			\includegraphics[width=4.0cm]{figure/AutoCor-EstPredFig2} 
+		\end{center} 
+	\end{tabular}
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                    Notatation
+%-------------------------------------------------------------------------------
+\section{Types of Spatial Data}
+\subsection{}
+\begin{frame} [fragile]
+\frametitle{Notation}
+
+<<Notation-plot, fig.width=5, fig.height=5, echo=FALSE, dev = "tikz", include = FALSE>>=
+par(mar = c(0,0,0,0))
+plot(c(0,1),c(0,1), type = "n", xlab = "", ylab ="", xaxt = "n", yaxt = "n", bty = "n",
+	lwd = 3)
+rect(0,0,1,1,lwd = 4)
+text(.06,.93,"$D$", cex = 3)
+set.seed(12)
+points(runif(20), runif(20), pch = 19, cex = 2, col = "red")
+points(runif(1), runif(1), pch = 1, cex = 2)
+text(.57,.685,"$Z(\\bs_i)$", cex = 2)
+text(.70,.525,"$Z(\\bs_0)$", cex = 2)
+@
+
+	\vspace{.2cm}
+	\begin{tabular} {p{4cm} p{5cm}}
+
+ 		\vspace{.2cm}
+		\includegraphics[width=4.0cm]{figure/Notation-plot} &
+		\vspace{.5cm}
+		\bit
+			\item{$D$ is the spatial region or area of interest} 
+			\item{$\bs$ contains the spatial coordinates}
+			\item{$Z$ is the value located at the spatial coordinates}
+		\eit
+
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                    Types of Spatial Data
+%-------------------------------------------------------------------------------
+\begin{frame} [fragile]
+\frametitle{Types of Spatial Data}
+
+	\vspace{.2cm}
+	\begin{tabular} {p{4cm} p{5cm}}
+
+ 		\vspace{.2cm}
+		\includegraphics[width=4.0cm]{figure/Notation-plot} &
+		\vspace{-.2cm}
+		\bit
+			\item{$\{Z(\bs):\bs \in D\}$}
+			\item{{\color{blue!70!black}Geostatistical Data:} $Z$ random, $D$ fixed, continuous, infinite} 
+			\item{{\color{blue!70!black}Lattice/Aerial Data:} $Z$ random, $D$ fixed, finite, (ir)regular grid} 
+			\item{{\color{blue!70!black}Point Pattern Data:} $Z \equiv 1$, $D$ random, finite} 
+		\eit
+
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                    Types of Spatial Data
+%-------------------------------------------------------------------------------
+\begin{frame} [fragile]
+\frametitle{Examples of Geostatistical Data}
+
+
+	\begin{tabular} {p{4.5cm} p{4.5cm}}
+
+	<<colorPointsCAOzone-plot, fig.width=4, fig.height=6, echo=FALSE, fig.keep = 'last', fig.align='center'>>=
+		par(mar = c(0,0,0,0))
+		layout(matrix(1:2, nrow = 1), width = c(2,1))
+		plot(otl)
+		minmaxDF <- plotPointsRGB(pts, "OZONE", add = TRUE, pch = 19)
+		SpatialPolygonsRescale(layout.scale.bar(), offset = c(-2310720,-327847.8),
+			scale = 120000, fill = c("transparent","black"), plot.grid = FALSE)
+		text(-2309651,-306484.6,"0", cex = .7)
+		text(-2212377, -305416.5,"100 km", cex = .7)
+		SpatialPolygonsRescale(layout.north.arrow(), offset = c(-1820073,743516.4),
+			scale = 130000, col = "green", plot.grid = FALSE)
+		plot(c(0,1), c(0,1), type = "n", xlab = "", ylab = "", bty = "n",
+			xaxt = "n", yaxt = "n")
+		addRGBRampLegend(minmaxDF["colorValue","min"], minmaxDF["colorValue","max"],
+			0, .3, .2, .7, printFormat = "0.4", cex = .8)
+		text(.45,.75,"Ozone (ppm)")
+	@
+ &
+	<<echo = FALSE, cache = TRUE>>=
+		data(meuse)
+		coordinates(meuse) <- ~x+y
+		proj4string(meuse) <- CRS("+init=epsg:28992")
+		meuse@data[,"logZn"] <- log(meuse@data[,"zinc"])
+		path <- system.file("rawdata/meuse", package = "spPlotSampCourse")
+		outlineFile <- paste(path,"/meuse_outline", sep = "")
+		spsDF <- readShapePoly(outlineFile)
+		data(meuse.riv)
+		meuse.lst <- list(Polygons(list(Polygon(meuse.riv)),"meuse.riv"))
+		meuse.sr <- SpatialPolygons(meuse.lst)
+	@
+	<<colorPointsMeuseLogZN-plot, fig.width=4, fig.height=6, echo=FALSE, fig.keep = 'last', fig.align='center'>>=
+		par(mar = c(0,0,0,0))
+		layout(matrix(1:2, nrow = 1), width = c(2,1))
+		plot(meuse.sr, col = "lightblue")
+		plot(spsDF, add = TRUE)
+		minmaxDF <- plotPointsRGB(meuse, "logZn", add = TRUE, pch = 19, cex = .8)
+		SpatialPolygonsRescale(layout.scale.bar(), offset = c(178632.7,333516.3),
+			scale = 1000, fill = c("transparent","black"), plot.grid = FALSE)
+		text(178632.7, 333746.7, "0")
+		text(179632.2, 333746.7, "1 km")
+		SpatialPolygonsRescale(layout.north.arrow(), offset = c(179209.4, 336243.6),
+			scale = 1000, col = "green", plot.grid = FALSE)
+		plot(c(0,1), c(0,1), type = "n", xlab = "", ylab = "", bty = "n",
+			xaxt = "n", yaxt = "n")
+		addRGBRampLegend(minmaxDF["colorValue","min"], minmaxDF["colorValue","max"],
+			0, .3, .2, .7, printFormat = "1.2", cex = .8)
+		text(.45,.75,"log(Zn)")
+	@
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                    Types of Spatial Data
+%-------------------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Examples of Lattice/Aerial Data}
+
+
+
+	<<echo=FALSE, cache = TRUE>>=
+		path <- system.file("rawdata/NC_SIDS", package = "spPlotSampCourse")
+		sidsFile <- paste(path,"/sids", sep = "")
+		sids  <- readShapePoly(sidsFile)
+		sids@data[,"sidsRate74"] <- sids@data[,"SID74"]/sids@data[,"BIR74"]
+	@
+	<<echo=FALSE, cache = TRUE>>=
+		path <- system.file("rawdata/fireDiversity", package = "spPlotSampCourse")
+		fireFile <- paste(path,"/fireDiv", sep = "")
+		fire  <- readShapePoly(fireFile)
+		@
+	\begin{tabular} {c}
+	<<rawSIDS-plot, fig.width=7, fig.height=1.5, echo=FALSE, fig.keep = "last", include = FALSE>>=
+		par(mar = c(0,0,0,0))
+		layout(matrix(1:2, nrow = 1), width = c(2,1))
+		minmaxDF <- plotPolygonsRGB(sids,"sidsRate74")
+		plot(c(0,1), c(0,1), type = "n", xlab = "", ylab = "", bty = "n",
+			xaxt = "n", yaxt = "n")
+		addRGBRampLegend(minmaxDF["colorValue","min"], minmaxDF["colorValue","max"],
+			0, .1, .2, .7, printFormat = "0.4", cex = .7)
+		text(.15,.85,"SIDS")
+	@
+	{\centering \includegraphics[width=\maxwidth]{figure/rawSIDS-plot} }
+ 	\\
+
+	<<fireDiv-plot, fig.width=6, fig.height=3, echo=FALSE, fig.keep = "last", include = FALSE>>=
+		par(mar = c(0,0,0,0))
+		layout(matrix(1:2, nrow = 1), width = c(2,1))
+		minmaxDF <- plotPolygonsRGB(fire,"z")
+		points(fire@data[,"xCentroid"],fire@data[,"yCentroid"] , 
+			pch = as.character(fire@data$trt), cex = 3, col = "white")
+		plot(c(0,1), c(0,1), type = "n", xlab = "", ylab = "", bty = "n",
+			xaxt = "n", yaxt = "n")
+		#undebug(addRGBRampLegend)
+		addRGBRampLegend(minmaxDF["colorValue","min"], minmaxDF["colorValue","max"],
+			0, .1, .2, .7, printFormat = "2.0", cex = .9)
+		text(.15,.85,"Species\nCounts", cex = 1.2)
+	@
+	{\centering \includegraphics[width=.6\maxwidth]{figure/fireDiv-plot} }
+
+
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                    Types of Spatial Data
+%-------------------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Examples of Point Pattern Data}
+
+
+
+	<<echo=FALSE, cache = TRUE, include = FALSE>>=
+		library(spatstat)
+		data(anemones)
+		spAnemones <- SpatialPoints(cbind(anemones$x,anemones$y))
+	@
+	<<echo=FALSE, cache = TRUE, include = FALSE>>=
+		data(ponderosa)
+		spPonderosa <- SpatialPoints(cbind(ponderosa$x,ponderosa$y))
+	@
+	<<anemones-plot, fig.width=5, fig.height=5, echo=FALSE, fig.keep = "last", include = FALSE>>=
+		par(mar = c(0,0,5,0))
+		plot(spAnemones, pch = 19)
+		title("Anemones", cex.main = 2)
+	@
+	<<ponderosa-plot, fig.width=5, fig.height=5, echo=FALSE, fig.keep = "last", include = FALSE>>=
+		par(mar = c(0,0,5,0))
+		plot(spPonderosa, pch = 19)
+		title("Ponderosa", cex.main = 2)
+	@
+	\begin{tabular} {p{4.5cm} p{4.5cm}}
+	{\centering \includegraphics[width=\maxwidth]{figure/anemones-plot} } &
+	{\centering \includegraphics[width=\maxwidth]{figure/ponderosa-plot} }
+
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                    Estimation
+%-------------------------------------------------------------------------------
+
+\section{Estimation}
+\subsection{}
+\begin{frame}[fragile]
+\frametitle{Estimation}
+
+minimize for $\btheta$ \\
+\begin{center}
+	$-2\ell(\btheta,\bz) \propto \log|\bSigma_{\btheta}| + \br_{\btheta}\upp\bSigma\upi\br_{\btheta}$
+\end{center}
+or
+\begin{center}
+	$-2\ell_{\textrm{REML}}(\btheta,\bz) \propto \log|\bSigma_{\btheta}| + \br_{\btheta}\upp\bSigma_{\btheta}\upi\br_{\btheta} + \log|\bX\upp\bSigma_{\btheta}\upi\bX|$
+\end{center}
+where
+\begin{center}
+	$\br_{\btheta} = \bz - \bX\hat{\bbeta}_{\btheta}$
+\end{center}
+and
+\begin{center}
+	$\hat{\bbeta}_{\btheta} = (\bX\upp\bSigma_{\btheta}\upi\bX)\upi\bX\upp\bSigma\upi\bz$
+\end{center}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                    Prediction
+%-------------------------------------------------------------------------------
+\section{Prediction}
+\subsection{}
+\begin{frame}[fragile]
+\frametitle{Prediction}
+
+		 \[
+			\left(\begin{array}{c}	
+					\bz_{\textrm{observed}} \\
+					{\color{green!70!black} \bz_{\textrm{unobserved}}}
+			\end{array} \right) =  \bX{\color{yellow!70!black}\bbeta} + 
+			\bepsilon, \ \var(\bepsilon) = \bSigma({\color{red!70!black}\btheta}) \] \\
+
+
+	<<CA-predSEMap, fig.width=4, fig.height=6, fig.keep = 'last', include=FALSE>>=
+		par(mar = c(0,0,0,0))
+		layout(matrix(1:2, nrow = 1), width = c(2,1))
+		plot(otl)
+		minmaxDF <- plotPointsRGB(ozPred1, colorCol = "OZONE.predSE", 
+			pch = 15, cex = .4, add = TRUE,
+			rlim = c(0,1), glim = c(0,0), blim = c(1,0), tlim = c(0,1))
+		plot(pts, add = TRUE, pch = 19, col = "yellow", cex = .6)
+		SpatialPolygonsRescale(layout.scale.bar(), offset = c(-2310720,-327847.8),
+			scale = 100000, fill = c("transparent","black"), plot.grid = FALSE)
+		text(-2309651,-306484.6,"0", cex = .7)
+		text(-2212377, -305416.5,"100 km", cex = .7)
+		SpatialPolygonsRescale(layout.north.arrow(), offset = c(-1820073,743516.4),
+			scale = 80000, col = "green", plot.grid = FALSE)
+		plot(c(0,1), c(0,1), type = "n", xlab = "", ylab = "", bty = "n",
+			xaxt = "n", yaxt = "n")
+		addRGBRampLegend(minmaxDF["colorValue","min"], minmaxDF["colorValue","max"],
+			.2, .4, .4, .6, printFormat = "0.4", cex = .8)
+		text(.45,.66, labels = "Standard Error \n of Predictions", cex = .9)
+	@
+
+	\begin{tabular} {p{4.5cm} p{4.5cm}}
+		\vspace{-.8cm}
+		{\centering \includegraphics[width=.9\maxwidth]{figure/CA-predMap} } &
+		\vspace{-.8cm}
+		{\centering \includegraphics[width=.9\maxwidth]{figure/CA-predSEMap} }
+
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                    Regression
+%-------------------------------------------------------------------------------
+\section{Regression}
+\subsection{}
+\begin{frame}[fragile]
+\frametitle{Spatial Regression}
+
+
+	<<include = FALSE, cache = TRUE>>=
+		path <- system.file("rawdata/lizards", package = "spPlotSampCourse")
+		CAfile <- paste(path,"/CA_outline", sep = "")
+		CAoutline  <- readShapePoly(CAfile)
+		safile <- paste(path,"/StudyArea", sep = "")
+		sa  <- readShapePoly(safile)
+		lizFile <- paste(path,"/whiptail_data", sep = "")
+		lizards  <- readShapePoints(lizFile)
+		lizards <- lizards[lizards@data$HYPER__COL > 0,]
+		lizards@data[,"logAb"] <- log(lizards@data$HYPER__COL)
+	@
+
+	<<lizardCA-plot, fig.width=5, fig.height=5, fig.keep = "last", include = FALSE>>=
+		par(mar = c(0,0,0,0))
+		plot(CAoutline, xlim = c(-2159549, -1514591), ylim = c(-713903.6,-259775.1))
+		plot(sa, add = TRUE)
+		plot(lizards, add = TRUE, pch = 19, cex = .7)
+		text(-1901455, -325734.4, "California", cex = 3)
+	@
+
+	\begin{tabular} {p{4.5cm} p{4.5cm}}
+		\vspace{.1cm}
+		\begin{tabular} {c}
+				\includegraphics[width=3.8cm]{figure/lizardCA-plot} \\
+				\includegraphics[width=3.8cm]{figure/whiptailHead.jpg}
+		\end{tabular} &
+
+		\begin{itemize}
+			\item Whiptail Lizard
+			\item 148 locations in Southern California
+			\item Measured the average number caught in traps over 80-90 trapping events in one year
+			\item Data log-transformed, one outlier removed
+		\end{itemize}
+
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                    Regression
+%-------------------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Whiptail Lizard Data}
+
+	<<lizardPoints-plot, fig.width=5, fig.height=5, fig.keep = "last", include = FALSE>>=
+		par(mar = c(0,0,0,0))
+		layout(matrix(1:2, nrow = 1), width = c(2,1))
+		plot(sa)
+		minmaxDF <- plotPointsRGB(lizards, colorCol = "logAb", 
+			pch = 19, cex = .8, add = TRUE)
+		plot(c(0,1), c(0,1), type = "n", xlab = "", ylab = "", bty = "n",
+			xaxt = "n", yaxt = "n")
+		addRGBRampLegend(minmaxDF["colorValue","min"], minmaxDF["colorValue","max"],
+			.2, .3, .5, .7, printFormat = "1.2", cex = .8)
+		text(.35,.80,"log \n Abundance", cex = 1.5)
+	@
+	<<lizardHist-plot, fig.width=5, fig.height=5, fig.keep = "last", include = FALSE>>=
+		par(mar = c(6,6,0,0))
+		hist(lizards@data[,"logAb"], col = "blue", main = "", xlab = "log(Abundance)", cex.axis = 1.5, cex.lab = 2)
+	@
+	<<lizardBox-plot, fig.width=5, fig.height=5, fig.keep = "last", include = FALSE>>=
+		par(mar = c(1,3,3,1))
+		boxplot(lizards@data[,"logAb"], col = "blue", main = "boxplot of log(Abundance)", cex.axis = 1.5, cex.lab = 2, cex.main = 2)
+	@
+
+		 \[
+			\left(\begin{array}{c}	
+					\bz_{\textrm{observed}} \\
+					{\color{green!70!black} \bz_{\textrm{unobserved}}}
+			\end{array} \right) =  \bX{\color{yellow!70!black}\bbeta} + 
+			\bepsilon, \ \var(\bepsilon) = \bSigma({\color{red!70!black}\btheta}) \] \\
+
+	\vspace{-.4cm} \begin{tabular}{p{4.5cm} p{4.5cm}}
+		\bit
+			\item {\color{yellow!70!black}Ant Abundance}
+			\item {\color{yellow!70!black}Percent Sandy Soil}
+		\eit &
+		\bit
+			\item {\color{red!70!black}Matern Model}
+			\item {\color{red!70!black}Anisotropy}
+		\eit
+	\end{tabular}
+
+	\begin{tabular} {p{5cm} p{4cm}}
+			\vspace{-.7cm}\includegraphics[width=4.0cm]{figure/lizardPoints-plot}  &
+		\vspace{-.7cm} \begin{tabular} {c}
+			\includegraphics[width=1.9cm]{figure/lizardHist-plot} \\
+			\includegraphics[width=1.9cm]{figure/lizardBox-plot}
+		\end{tabular}
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                    Regression
+%-------------------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Fitted Model for Whiptail Lizard Data}
+
+	<<include = FALSE, cache = TRUE>>=
+		lizFit <- splmm(logAb ~ CREMATOGAS + LOG_SS, spdata = lizards, estMeth = "REML",
+			varComps = "besselK", useAnisotropy = TRUE)
+	@
+	
+		 \[
+			\left(\begin{array}{c}	
+					\bz_{\textrm{observed}} \\
+					{\color{green!70!black} \bz_{\textrm{unobserved}}}
+			\end{array} \right) =  \bX{\color{yellow!70!black}\bbeta} + 
+			\bepsilon, \ \var(\bepsilon) = \bSigma({\color{red!70!black}\btheta}) \] \\
+
+	<<results = "asis", echo = FALSE, include = FALSE>>=
+	xtable(summary(lizFit)$coefficients, digits = c(1,3,3,2,4))
+	@
+
+	\begin{table}[ht]
+	\centering
+	\begin{tabular}{rrrrrr}
+	 Effect & Est & Std Error & $t$-value & df & Pr($t$:H$_0$) \\ 
+		\cye{Intercept} & \cye{0.716} & \cye{0.574} & \cye{146} & \cye{1.25} & \cye{0.2139} \\ 
+		\cye{Ant Abund} & \cye{0.252} & \cye{0.107} & \cye{146} & \cye{2.36} & \cye{0.0195} \\ 
+		\cye{Sandy Soil} & \cye{0.764} & \cye{0.249} & \cye{146} & \cye{3.07} & \cye{0.0026} \\ 
+	\end{tabular}
+	\end{table}
+
+	<<results = "asis", echo = FALSE, include = FALSE>>=
+	xtable(summary(lizFit)$covparms, digits = c(1,1,1,5))
+	@
+
+\scriptsize
+
+	% latex table generated in R 3.0.1 by xtable 1.7-1 package
+	% Thu May 23 09:29:45 2013
+	\begin{table}[ht]
+	\centering
+	\begin{tabular}{rrr}
+	Component & Parameter & Estimate \\ 
+	\cre{nugget} & \cre{nugget} & \cre{0.598} \\ 
+	\cre{besselK} & \cre{parsil} & \cre{1.027} \\ 
+	\cre{besselK} & \cre{range} & \cre{160313} \\ 
+	\cre{besselK} & \cre{minorp} & \cre{0.042} \\ 
+	\cre{besselK} & \cre{rotate} & \cre{18.5} \\ 
+	\cre{besselK} & \cre{extrap} & \cre{0.539} \\ 
+	\end{tabular}
+	\end{table}
+
+
+\end{frame}
+	
+%-------------------------------------------------------------------------------
+%                        Spatial Design of Experiments
+%-------------------------------------------------------------------------------
+
+\section{DOX}
+\subsection{}
+\begin{frame} 
+\frametitle{Glades in the Ozarks}
+     
+		\begin{center}
+		  \vspace{-.5cm}
+			\includegraphics[width=10.4cm]{figure/OzarkDesign1Crop.pdf} 
+		\end{center} 
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                        Spatial Design of Experiments
+%-------------------------------------------------------------------------------
+
+\begin{frame} 
+\frametitle{Simulated Spatial Experimental Design}
+     
+		\begin{center}
+		  \vspace{-.5cm}
+			\includegraphics[width=10.4cm]{figure/OzarkDesign2Crop.pdf} 
+		\end{center} 
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                        Spatial Design of Experiments
+%-------------------------------------------------------------------------------
+
+\begin{frame} 
+\frametitle{Simulated Spatial Experimental Design}
+
+	<<results = "asis", echo = FALSE, include = FALSE, cache = TRUE>>=
+    fireSDF <- SpatialPointsDataFrame(SpatialPoints(fire@data[,
+			c("xCentroid","yCentroid")]),fire@data)
+		fireSDF@data[,"trt"] <- as.factor(fireSDF@data[,"trt"])
+		fireFitInd <- splmm(z ~ trt - 1, spdata = fireSDF, estMeth = "REML",
+			varComps = NULL)
+		fireFit <- splmm(z ~ trt - 1, spdata = fireSDF, estMeth = "REML",
+			varComps = "exponential")
+		Cmat <- matrix(c(-1, .5, .5,  0,  0,
+										  -1,  0, 0, .5, .5,
+											0, -.5, -.5, .5, .5,
+											0, 1, -1, 0, 0, 
+											0, 0, 0, 1, -1), ncol = 5, byrow = TRUE)
+		estInd <- Cmat %*% fireFitInd$betaHat
+		seInd <- sqrt(diag(Cmat %*% fireFitInd$covBetaHat %*% t(Cmat)))
+		estExp <- Cmat %*% fireFit$betaHat
+		seExp <- sqrt(diag(Cmat %*% fireFit$covBetaHat %*% t(Cmat)))
+		fireTable <- cbind(c(-4, 6, 10, 2, 0), estInd, seInd, estExp, seExp)
+		colnames(fireTable) <- c("True Value", "Ind Est", "Ind SE", "Sp Est", "Sp SE")
+		xtable(fireTable, digits = c(0, 0, 1, 2, 2, 2))
+		@
+	
+
+<<fireDivOrig-plot, fig.width=6, fig.height=3, echo=FALSE, fig.keep = "last", include = FALSE>>=
+	par(mar = c(0,0,0,0))
+	plotPolygonsRGB(fire,"zOrig")
+	for(i in 1:25) text(fire@data[i,"xCentroid"], fire@data[i,"yCentroid"], 
+		as.character(fire@data$zOrig[i]), cex = 2, col = "white")
+@
+
+\scriptsize
+
+		 \[
+			\left(\begin{array}{c}	
+					\bz_{\textrm{observed}} \\
+					{\color{green!70!black} \bz_{\textrm{unobserved}}}
+			\end{array} \right) =  \bX{\color{yellow!70!black}\bbeta} + 
+			\bepsilon, \ \var(\bepsilon) = \bSigma({\color{red!70!black}\btheta}) \] \\
+
+% latex table generated in R 3.0.1 by xtable 1.7-1 package
+% Thu May 23 11:52:36 2013
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrrr}
+True Value & Ind Est & Ind SE & Sp Est & Sp SE \\ 
+  \hline
+-4 & \cye{-2.4} & \cye{1.29} & \cye{-2.95} & \cye{0.87} \\ 
+6 & \cye{6.6} & \cye{1.29} & \cye{6.81} & \cye{1.05} \\ 
+10 & \cye{9.0} & \cye{1.05} & \cye{9.77} & \cye{0.84} \\ 
+2 & \cye{0.4} & \cye{1.49} & \cye{0.53} & \cye{1.07} \\ 
+0 & \cye{-2.4} & \cye{1.49} & \cye{-1.94} & \cye{1.68} \\ 
+   \hline
+& nugget: \cre{5.56} & & nugget: \cre{0.00} & \\
+& & & partial sill: \cre{13.55} & \\
+& & & range:  \cre{9.36} & \\
+\end{tabular}
+\end{table}
+
+		\vspace{-.5cm}
+		\begin{center}
+			\includegraphics[width=4cm]{figure/fireDivOrig-plot} 
+			\includegraphics[width=4cm]{figure/fireDiv-plot} 
+		\end{center} 
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                        Spatial Sampling
+%-------------------------------------------------------------------------------
+
+\section{Sampling}
+\subsection{Spatial Sampling}
+\begin{frame} 
+     
+	\begin{tabular} {p{6cm} p{3cm}}
+		\vspace{.1cm} \includegraphics[width=6.3cm]{figure/mooseSurvey20A.jpg}  &
+	
+		\begin{itemize}
+			\item Moose Survey
+			\item South of Fairbanks
+			\item $\sim$ 4500 mi$^2$
+		\end{itemize}
+
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                        Spatial Sampling
+%-------------------------------------------------------------------------------
+
+\subsection{Spatial Sampling}
+\begin{frame} 
+     
+	\begin{tabular} {p{2.7cm} p{4cm} p{2.7cm}}
+
+		\begin{tabular} {p{2.7cm}}
+			Total Area \\
+			\vspace{.2cm} \cbl{SRS} \\
+			\vspace{-.2cm} \begin{itemize}
+				\item \small{$\hat{\tau} = 11535$}
+				\item $\textrm{se}(\hat{\tau}) = 985$
+			\end{itemize} \\
+			\vspace{-.2cm} \cgr{FPBK} \\
+			\vspace{-.2cm} \begin{itemize}
+				\item \small{$\hat{\tau} = 11327$}
+				\item $\textrm{se}(\hat{\tau}) = 978$
+			\end{itemize} \\
+
+		\end{tabular} &
+
+		\vspace{-2cm} \includegraphics[width=4.3cm]{figure/MooseSurvey20APlots.jpg}  &
+	
+		\begin{tabular} {p{2.7cm}}
+			Small Area \\
+			\vspace{.2cm} \cbl{SRS(n=17)} \\
+			\vspace{-.2cm} \begin{itemize}
+				\item \small{$\hat{\tau} = 1535$}
+				\item $\textrm{se}(\hat{\tau}) = 227$
+			\end{itemize} \\
+			\vspace{-.2cm} \cgr{FPBK} \\
+			\vspace{-.2cm} \begin{itemize}
+				\item \small{$\hat{\tau} = 1437$}
+				\item $\textrm{se}(\hat{\tau}) = 153$
+			\end{itemize} \\
+
+		\end{tabular}
+
+	\end{tabular}
+
+\end{frame}
+
+
+\end{document}

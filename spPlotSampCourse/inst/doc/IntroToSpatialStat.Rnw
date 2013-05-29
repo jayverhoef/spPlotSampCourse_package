@@ -1,0 +1,5 @@
+%\VignetteIndexEntry{Introduction to Spatial Statistics}
+\documentclass{article}
+\begin{document}
+\end{document}
+

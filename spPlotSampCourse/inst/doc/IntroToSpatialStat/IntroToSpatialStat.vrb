@@ -1,0 +1,46 @@
+\frametitle {Fitted Model for Whiptail Lizard Data}
+
+
+
+
+ \[
+\left(\begin{array}{c}
+\bz_{\textrm{observed}} \\
+{\color{green!70!black} \bz_{\textrm{unobserved}}}
+\end{array} \right) =  \bX{\color{yellow!70!black}\bbeta} +
+\bepsilon, \ \var(\bepsilon) = \bSigma({\color{red!70!black}\btheta}) \] \\
+
+
+
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrrr}
+ Effect & Est & Std Error & $t$-value & df & Pr($t$:H$_0$) \\
+\cye{Intercept} & \cye{0.716} & \cye{0.574} & \cye{146} & \cye{1.25} & \cye{0.2139} \\
+\cye{Ant Abund} & \cye{0.252} & \cye{0.107} & \cye{146} & \cye{2.36} & \cye{0.0195} \\
+\cye{Sandy Soil} & \cye{0.764} & \cye{0.249} & \cye{146} & \cye{3.07} & \cye{0.0026} \\
+\end{tabular}
+\end{table}
+
+
+
+
+\scriptsize
+
+% latex table generated in R 3.0.1 by xtable 1.7-1 package
+% Thu May 23 09:29:45 2013
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrr}
+Component & Parameter & Estimate \\
+\cre{nugget} & \cre{nugget} & \cre{0.598} \\
+\cre{besselK} & \cre{parsil} & \cre{1.027} \\
+\cre{besselK} & \cre{range} & \cre{160313} \\
+\cre{besselK} & \cre{minorp} & \cre{0.042} \\
+\cre{besselK} & \cre{rotate} & \cre{18.5} \\
+\cre{besselK} & \cre{extrap} & \cre{0.539} \\
+\end{tabular}
+\end{table}
+
+

@@ -1,0 +1,5 @@
+%\VignetteIndexEntry{Block Prediction}
+\documentclass{article}
+\begin{document}
+\end{document}
+

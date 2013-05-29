@@ -1,0 +1,844 @@
+\documentclass[mathserif,compress]{beamer} 
+\usepackage{beamerthemeDresden} 
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{palatino}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{pgf}
+\usepackage{relsize}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\bit{\begin{itemize}}
+\def\eit{\end{itemize}}
+\def\bdm{\begin{displaymath}}
+\def\edm{\end{displaymath}}
+\def\ben{\begin{enumerate}}
+\def\een{\end{enumerate}}
+\def\bb{\mathbf{b}}
+\def\bc{\mathbf{c}}
+\def\bd{\mathbf{d}}
+\def\bh{\mathbf{h}}
+\def\bm{\mathbf{m}}
+\def\br{\mathbf{r}}
+\def\bs{\mathbf{s}}
+\def\bu{\mathbf{u}}
+\def\bv{\mathbf{v}}
+\def\bw{\mathbf{w}}
+\def\bx{\mathbf{x}}
+\def\by{\mathbf{y}}
+\def\bz{\mathbf{z}}
+\def\bA{\mathbf{A}}
+\def\bD{\mathbf{D}}
+\def\bG{\mathbf{G}}
+\def\bI{\mathbf{I}}
+\def\bQ{\mathbf{Q}}
+\def\bR{\mathbf{R}}
+\def\bS{\mathbf{S}}
+\def\bV{\mathbf{V}}
+\def\bW{\mathbf{W}}
+\def\bX{\mathbf{X}}
+\def\bY{\mathbf{Y}}
+\def\bZ{\mathbf{Z}}
+\def\cB{\mathcal{B}}
+\def\cF{\mathcal{F}}
+\def\cI{\mathcal{I}}
+\def\cK{\mathcal{K}}
+\def\cU{\mathcal{U}}
+\def\bbeta{\mbox{\boldmath $\beta$}}
+\def\bepsilon{\mbox{\boldmath $\epsilon$}}
+\def\bdelta{\mbox{\boldmath $\delta$}}
+\def\bgamma{\mbox{\boldmath $\gamma$}}
+\def\bldeta{\mbox{\boldmath $\eta$}}
+\def\bphi{\mbox{\boldmath $\phi$}}
+\def\bkappa{\mbox{\boldmath $\kappa$}}
+\def\blambda{\mbox{\boldmath $\lambda$}}
+\def\bmu{\mbox{\boldmath $\mu$}}
+\def\bnu{\mbox{\boldmath $\nu$}}
+\def\btheta{\mbox{\boldmath $\theta$}}
+\def\brho{\mbox{\boldmath $\rho$}}
+\def\bDelta{\mbox{\boldmath $\Delta$}}
+\def\bLambda{\mbox{\boldmath $\Lambda$}}
+\def\bSigma{\mbox{\boldmath $\Sigma$}}
+\def\var{\textrm{var}}
+\def\cov{\textrm{cov}}
+\def\log{\textrm{log}}
+\def\median{\textrm{median}}
+\def\argmin{\textrm{arg min }}
+\def\bzero{\mathbf{0}}
+\def\bone{\mathbf{1}}
+\def\Poi{\textrm{Poi}}
+\def\Unif{\textrm{Unif}}
+\def\upp{^\prime}
+\def\upi{^{-1}}
+\newcommand{\cye}[1]{\color{yellow!70!black}#1}
+\newcommand{\cre}[1]{\color{red!70!black}#1}
+\newcommand{\cbl}[1]{\color{blue!70!black}#1}
+\newcommand{\cgr}[1]{\color{green!70!black}#1}
+\begin{document}
+<<setup, include=FALSE, cache=FALSE>>=
+# set global chunk options
+		opts_chunk$set(fig.align='center', size = 'tiny')
+		purl("BlockPredFinGrid.Rnw") ## Dump all R code to a file
+		library(spPlotSampCourse)
+		library(sp)
+		library(maptools)
+		library(xtable)
+@
+
+\title[]{Block Prediction for a Finite Grid}
+
+\author[Jay M. Ver Hoef]{Jay Ver Hoef} 
+
+\institute[NOAA National Marine Mammal Lab]
+{
+	\normalsize National Marine Mammal Lab \\
+	NOAA Fisheries \\
+	International Arctic Research Center \\
+	Fairbanks, Alaska, USA\\
+	\vspace{0.1cm}
+}
+\date[05/17/13]{}
+ 
+\maketitle
+ 
+% very important to use option [fragile] for frames containing code output!
+   
+%-------------------------------------------------------------------------------
+%                        Introduction
+%-------------------------------------------------------------------------------
+
+\section{Introduction}
+\subsection{}
+\begin{frame}[fragile]
+\frametitle{Introduction}
+	
+	\includegraphics[width=\maxwidth]{figure/Introductory-plot}
+
+\vspace{.5cm}
+\scriptsize
+Ver Hoef, J.M.  2001.  Predicting finite populations from spatially correlated data. {\it 2000 Proceedings of the Section on Statistics and the Environment of the American Statistical Association}, pgs. 93 - 98. \\
+
+Ver Hoef, J.M.   2008.  Spatial methods for plot-based sampling of wildlife populations.  {\it Environmental and Ecological Statistics} {\bf 15}: 3 - 13.
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Review of BLUP and Point Prediction
+%-------------------------------------------------------------------------------
+
+\section{Theory}
+\subsection{}
+\begin{frame}[fragile]
+\frametitle{Review of BLUP and Point Prediction}
+	\vspace{-.5cm}
+	\[
+		\left(\begin{array}{c}
+		\bz \\ Z(\bs_0)
+		\end{array}\right)	=
+		\left(\begin{array}{c}
+		\bX \\ \bx(\bs_0)\upp
+		\end{array}\right)\bbeta +
+		\left(\begin{array}{c}
+		\bepsilon \\ \epsilon(\bs_0)
+		\end{array}\right)
+	\] \\
+	\[ 
+		\cov\left(\begin{array}{c}
+		\bepsilon \\ \epsilon(\bs_0)
+		\end{array}\right) = 
+		\left(\begin{array}{cc}
+		\bSigma & \bc \\ \bc\upp & \sigma_0^2
+		\end{array}\right)
+	\]
+	 \\
+	Best Linear Unbiased Prediction (BLUP) (or [Universal] Kriging) \\
+	minimize: $\cre{E(\blambda\upp\bz - Z(\bs_0))^2}$ subject to 	$\cre{E[\blambda\upp\bz] = E[Z(\bs_0)]}  \ \forall \ \bbeta$. \\
+	Unbiasedness $\Rightarrow \bX\upp\blambda = \bx(\bs_0)$ \\		
+	Minimization yields the solution to:
+	\[
+		\left(\begin{array}{cc}
+		\bSigma & \bX \\ \bX\upp & \bzero
+		\end{array}\right)
+		\left(\begin{array}{c}
+		\blambda \\ \bm
+		\end{array}\right) =
+		\left(\begin{array}{c}
+		\bc \\ \bx(\bs_0)
+		\end{array}\right)
+	\]
+	 
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 BLUP for Finite Populations
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{BLUP for Finite Populations}
+	\vspace{-.5cm}
+	\[
+		\left(\begin{array}{c}
+		\bz_s \\ \bz_u
+		\end{array}\right)	=
+		\left(\begin{array}{c}
+		\bX_s \\ \bX_u
+		\end{array}\right)\bbeta +
+		\left(\begin{array}{c}
+		\bepsilon_s \\ \bepsilon_u
+		\end{array}\right)
+	\] \\
+	\[ 
+		\cov\left(\begin{array}{c}
+		\bepsilon_s \\ \bepsilon_u
+		\end{array}\right) = 
+		\left(\begin{array}{cc}
+		\bSigma_{s,s} & \bSigma_{s,u} \\ \bSigma_{s,u}\upp & \bSigma_{s,s}
+		\end{array}\right)
+	\]
+	 \\
+	Best Linear Unbiased Prediction (BLUP) (or [Universal] Kriging) \\
+	minimize: $\cre{E(\blambda\upp\bz_s - \bb\upp\bz)^2}$ subject to 	$\cre{E[\blambda\upp\bz_s] = E[\bb\upp\bz] \ \forall \ \bbeta}$. \\
+	Unbiasedness $\Rightarrow \bX_s\upp\blambda = \bX_s\upp\bb_s + \bX_u\upp\bb_u $ \\		
+	Minimization yields the solution to:
+	\[
+		\left(\begin{array}{cc}
+		\bSigma_{s,s} & \bX_s \\ \bX_s\upp & \bzero
+		\end{array}\right)
+		\left(\begin{array}{c}
+		\blambda \\ \bm
+		\end{array}\right) =
+		\left(\begin{array}{cc}
+		\bSigma_{s,s} & \bSigma_{u,u} \\ \bX_s\upp & \bX_u\upp
+		\end{array}\right)
+		\left(\begin{array}{c}
+		\bb_s  \\ \bb_u & 
+		\end{array}\right)
+	\]
+	 
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 BLUP for Finite Populations
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{BLUP for Finite Populations}
+
+	\begin{center}
+		 $\blambda\upp\bz = \bb_s\upp\bz_s + \bb_u\hat{\bz}_u$
+	\end{center} \\
+	where \\
+	\begin{center}
+		$\hat{\bz}_u = \bSigma_{u,s}\bSigma\upi_{s,s}(\bz_s - \hat{\bmu}_s) + \hat{\bmu}_u,$
+	\end{center} \\
+	\begin{center}
+		$\hat{\bmu}_u = \bX_u\hat{\bbeta}_{GLS}, \quad \hat{\bmu}_s = \bX_s\hat{\bbeta}_{GLS}, \quad 
+\hat{\bbeta}_{GLS} = (\bX_s\upp\bSigma_{s,s}\upi\bX_s)\upi\bX_s\upp\bSigma_{s,s}\upi\bz_s$
+	\end{center} \\
+	and
+	\begin{center}
+		 $E(\blambda\upp\bz_s - \bb\bz)^2 = \bb\upp\bSigma\bb - \bc_\bb\upp\bSigma_{s,s}\upi\bc_\bb + \bd_\bb\upp(\bX_s\upp\bSigma_{s,s}\upi\bX_s)\upi\bd_\bb$
+	\end{center} \\
+	where \\
+	\begin{center}
+		$\bc_\bb = \bSigma_{s,s}\bb_s + \bSigma_{s,u}\bb_u, \quad \bd_\bb = \bX\upp\bb - \bX_s\upp\bSigma_{s,s}\upi\bc_\bb$
+	\end{center} 
+
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 BLUP for Finite Populations
+%-------------------------------------------------------------------------------
+
+\section{Connections}
+\subsection{}
+\begin{frame}[fragile]
+\frametitle{Connections to Sampling Theory}
+
+Let \\
+	\begin{array}{ccc}
+		\bX = \left(\begin{array}{c}
+		\bone_n  \\ \bone_{N - n}
+		\end{array}\right)
+ 	&
+		\bSigma = \left(\begin{array}{cc}
+		\sigma^2\bI_n & \bzero  \\ \bzero\upp & \sigma^2\bI_{N-n}
+		\end{array}\right)
+ 	&
+		\bb = \left(\begin{array}{c}
+		\bone_n(1/N)  \\ \bone_{N - n}(1/N)
+		\end{array}\right)
+	\end{array}
+Then \\
+\begin{center}
+	$\blambda\upp\bz_s = \bar{z}$
+\end{center} \\
+and \\
+\begin{center}
+	$E(\blambda\upp\bz_s - \bb\bz)^2 = \frac{\sigma^2}{n}\left(1 - \frac{n}{N}\right)$
+\end{center} \\
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 BLUP for Finite Populations
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Connections to Sampling Theory}
+Let \\
+\tiny
+	\begin{array}{ccc}
+		\bX = \left(\begin{array}{cc}
+		\bone_{n_1} & \bzero  \\ \bzero & \bone_{n_2} \\
+		\bone_{N_1-n_1} & \bzero  \\ \bzero & \bone_{N_2-n_2} \\
+		\end{array}\right)
+ 	&
+		\bSigma_{s,s} = \left(\begin{array}{cc}
+		\sigma_1^2\bI_{n_1} & \bzero  \\ \bzero\upp & \sigma_2^2\bI_{n_2}
+		\end{array}\right)
+ 	&
+		\bSigma_{u,u} = \left(\begin{array}{cc}
+		\sigma_1^2\bI_{N_1 - n_1} & \bzero  \\ \bzero\upp & \sigma_2^2\bI_{N_2 - n_2}
+		\end{array}\right)
+	\end{array} \\
+\vspace{.1cm} 
+\footnotesize
+and 
+\begin{center}
+	$\bSigma_{s,u} = \bzero, \quad \bz = (\bz_{s,1}\upp, \bz_{s,2}\upp, \bz_{u,1}\upp, \bz_{u,2})\upp, \quad \bb = \bone_{N_1 + N_2}$
+\end{center} \\
+\normalsize
+Then \\
+\begin{center}
+	$\blambda\upp\bz_s = N_1\bar{z}_{s,1} + N_2\bar{z}_{s,2}$
+\end{center} \\
+and \\
+\begin{center}
+	$E(\blambda\upp\bz_s - \bb\bz)^2 = N_1^2\frac{\sigma_1^2}{n_1}\left(1 - \frac{n_1}{N_1}\right) + N_2^2\frac{\sigma_2^2}{n_2}\left(1 - \frac{n_2}{N_2}\right)$
+\end{center} \\
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Simulations
+%-------------------------------------------------------------------------------
+
+\section{Simulations}
+\subsection{Ecoscience paper 2002}
+\begin{frame}[fragile]
+\frametitle{Simulations}
+
+	\begin{tabular}{p{3.5cm} p{3.5cm} p{3.5}}
+	
+		\vspace{2cm}
+		\cbl{Number of plant species in 70 cm $\times$ 70 cm plot} &
+
+		\vspace{.2cm}
+		\includegraphics[width=\maxwidth]{figure/PlantSpGrid200-plot.jpg} &
+
+		\vspace{2cm}
+		\begin{tabular}{c}
+		\cbl{1000 samplings} \\
+		$\cbl{N = 200}$ \\ $\cbl{n = 100}$
+		\end{tabular}
+
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Simulations
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Fixed Pattern, Random Samples}
+
+1000 random samples of size 100 \\
+\tiny
+Ver Hoef, J.M.  2002.  Sampling and geostatistics for spatial data.  {\it Ecoscience} {\bf 9}: 152 - 161.\\
+\footnotesize
+	\begin{table}[ht]
+	\centering
+	\begin{tabular}{ccc}
+	Validation Statistics & Simple Random Sample & Finite Block Pred \\ 
+	\cbl{Bias} & \cre{-0.002} & \cre{-0.001} \\ 
+	\cbl{RMSPE} & \cre{0.121} & \cre{0.106} \\ 
+	\cbl{RAEV} & \cre{0.122} & \cre{0.105} \\ 
+	\cbl{80\%CI} & \cre{0.802} & \cre{0.806} \\ 
+	\end{tabular}
+	\end{table}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Simulations
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Random Pattern, Fixed Samples}
+\tiny
+Ver Hoef, J.M.  2002.  Sampling and geostatistics for spatial data.  {\it Ecoscience} {\bf 9}: 152 - 161.\\
+\vspace{.1cm}
+	\includegraphics[width=.5\maxwidth]{figure/RandPatFixSamp1.jpg}
+	\includegraphics[width=.5\maxwidth]{figure/RandPatFixSamp2.jpg}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Simulations
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Random Pattern, Fixed Samples}
+
+\footnotesize
+	\begin{table}[ht]
+	\centering
+	\begin{tabular}{cccc}
+	Validation Statistics & SRS$_{random}$ & FPBK$_{random}$ & FPBK$_{fixed}$\\ 
+	\cbl{Bias} & \cre{0.522} & \cre{-0.181} & \cre{0.127} \\ 
+	\cbl{RMSPE} & \cre{28.0} & \cre{20.7} & \cre{17.3} \\ 
+	\cbl{RAEV} & \cre{28.0} & \cre{20.3} & \cre{17.5} \\ 
+	\cbl{80\%CI} & \cre{0.801} & \cre{0.791} & \cre{0.796}\\ 
+	\end{tabular}
+	\end{table}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Simulations
+%-------------------------------------------------------------------------------
+
+\subsection{PLoS ONE paper 2013}
+\begin{frame}[fragile]
+\frametitle{Simulation With Covariates}
+
+\footnotesize
+Ver Hoef, J.M.  and Temesgen, H.  2013. A comparsion of the spatial linear model to nearest neighbor (k-NN) methods for forestry applications.  {\it PloS ONE} {\bf 8(3)}: e59129. doi:10.1371/journal.pone.0059129.
+
+\begin{table}
+\centering
+$
+\begin{array}{c}
+	\bw_1 = \bz_1 + \bepsilon_1 \\
+	\bw_\eta = \phi_{\eta-1}\bw_{\eta-1} + \bz_\eta + \bepsilon_\eta \\
+	\bx_\eta = \bmu_\eta + \bw_\eta \\
+	\by = \bX\bbeta + \bz_y + \bepsilon_y \\
+\end{array}
+$
+\end{table}
+\begin{center}
+$	\bV[j,j\upp;\sigma^2,\rho] =  
+		\sigma^2\left(1-\frac{3}{2}\frac{d_{j,j\upp}}{\rho}+
+		\frac{1}{2}\frac{d_{j,j\upp}}{\rho^3}\right)
+		    I\left(\frac{d_{j,j\upp}}{\rho}\leq 1\right) 
+$
+\end{center}
+
+8 spatially-patterned and cross-correlated covariates \\
+2 excluded, 2 with $\beta_i = 0$ included
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Prediction Methods
+%-------------------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Prediction Methods}
+
+\footnotesize
+\begin{itemize}
+\item mah1 k-NN that uses Mahalanobis distance with $k=1$.
+\item mah5: k-NN that uses Mahalanobis distance with $k=5$.
+\item msn1: k-NN that uses most significant neighbor (MSN) with $k=1$.
+\item msn5: k-NN that uses MSN with $k=1$.
+\item best: k-NN that uses both Mahalanobis distance and MSN, and tries $k=1, 2, \ldots, 30$, and then chooses the distance matrix and $k$ with the smallest cross-validation RMSPE from the observed data.
+\item slm: a spatial linear model using the same covariates as all k-NN methods as main effects only, with an exponential autocovariance model estimated by REML, and using FPBK prediction and variance equations.
+\item lm: multiple regression like slmMain but assuming all random errors are independent.
+\end{itemize}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Simulations
+%-------------------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Performance Measures}
+\tiny
+\begin{itemize}
+	\item 
+	Root-mean-squared-prediction error (RMSPE): 
+	\[
+		\textrm{RMSPE}=\sqrt{\frac{1}{m}\sum_{j=1}^m(\hat{\theta}_j-\theta_j)^2},
+	\]
+
+	\item
+		SRB: signed relative bias.
+	\[
+		\textrm{SRB}=\textrm{sign}(\tau)\sqrt{\frac{\tau^2}{\textrm{MSPE}-\tau^2}},
+	\]
+	where
+	\[
+		\tau=\frac{1}{m}\sum_{j=1}^m(\hat{\theta}_j-\theta_j),
+	\]
+	and sign($\tau$) is the sign (positive or negative) of $\tau$.
+	\item
+	PIC90: 90\% prediction interval coverage
+	\[
+		\textrm{PIC90}=\frac{1}{m}\sum_{j=1}^mI\left(\left(\hat{\theta}_j-1.645\hat{\textrm{se}}(\hat{\theta}_j)\right) < \theta_j \; \& \;  \theta_j < \left(\hat{\theta}_j+1.645\hat{\textrm{se}}(\hat{\theta}_j)\right) \right),
+	\]
+where 
+$\hat{\textrm{se}}(\hat{\theta}_j)$ is the estimated standard error of  $\hat{\theta}_j$. 
+\end{itemize}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Simulations
+%-------------------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Gaussian Simulations}
+
+
+\begin{table}[ht]
+\caption{\tiny Performance summaries from 2000 simulated spatial Gaussian data sets with 100 samples and 300 predictions each. Prediction methods form the columns and are described in Section 3.4.  Performance measures form the rows and are described in Section 3.3. \label{GAUSsummary}}
+\scriptsize
+\begin{center}
+\begin{tabular}{|l r r r r r r r|}
+\hline
+\hline
+  & mah1 & mah5 & msn1 & msn5 & best & lm & slm \\
+\hline
+\hline
+\multicolumn{8}{|c|}{Point} \\
+RMSPE$^a$ & 9.329 & 7.451 & 5.379 & 4.423 & 4.456 & 3.892 & 2.443 \\
+SRB$^b$ & -0.006 & -0.009 & 0 & -0.004 & -0.004 & -0.002 & 0.001 \\
+PIC90$^c$ & 0.897 & 0.9 & 0.887 & 0.889 & 0.88 & 0.896 & 0.892 \\
+\multicolumn{8}{|c|}{Total} \\
+RMSPE & 262.6 & 289.8 & 174.3 & 153.3 & 154.5 & 139.3 & 87.8 \\
+SRB & -0.058 & -0.067 & -0.003 & -0.034 & -0.034 & -0.02 & 0.009 \\
+PIC90 & 0.952 & 0.87 & 0.914 & 0.886 & 0.874 & 0.88 & 0.887 \\
+\hline
+\multicolumn{8}{l}{$^a$ Root-mean-squared-prediction error} \\
+\multicolumn{8}{l}{$^b$ Signed relative bias} \\
+\multicolumn{8}{l}{$^c$ 90\% prediction interval coverage} \\
+\end{tabular}
+\end{center}
+\end{table}%
+%
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Simulations
+%-------------------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Poisson Simulations}
+
+
+\begin{table}[ht]
+\caption{\tiny Performance summaries from 2000 simulated Poisson data sets with 100 samples and 300 predictions each. Prediction methods form the columns and are described in Section 3.4.  Performance measures form the rows and are described in Section 3.3. \label{POISsummary}}
+\scriptsize
+\begin{center}
+\begin{tabular}{|l r r r r r r r|}
+\hline
+\hline
+  & mah1 & mah5 & msn1 & msn5 & best & lm & slm \\
+\hline
+\hline
+\multicolumn{8}{|c|}{Total} \\
+RMSPE & 320 & 295.9 & 296.3 & 262.3 & 272.2 & 283.1 & 226.1 \\
+SRB & -0.137 & -0.188 & -0.047 & -0.135 & -0.182 & -0.033 & -0.005 \\
+PIC90 & 0.912 & 0.842 & 0.9 & 0.867 & 0.83 & 0.86 & 0.858 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}%
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Simulations
+%-------------------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Bernoulli Simulations}
+
+
+\begin{table}[ht]
+\caption{\tiny Performance summaries from 2000 simulated binary data sets with 100 samples and 300 predictions each. Prediction methods form the columns and are described in Section 3.4.  Performance measures form the rows and are described in Section 3.3. \label{BERNsummary}}
+\scriptsize
+\begin{center}
+\begin{tabular}{|l r r r r r r r|}
+\hline
+\hline
+  & mah1 & mah5 & msn1 & msn5 & best & lm & slm \\
+\hline
+\hline
+\multicolumn{8}{|c|}{Proportion} \\
+RMSPE & 0.0395 & 0.0394 & 0.0387 & 0.0334 & 0.0343 & 0.0329 & 0.0298 \\
+SRB & 0.072 & 0.09 & 0.003 & 0.019 & 0.079 & 0.018 & 0.014 \\
+PIC90 & 0.919 & 0.841 & 0.913 & 0.882 & 0.84 & 0.886 & 0.884 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}%
+%
+
+\end{frame}
+
+
+%-------------------------------------------------------------------------------
+%                 Simulations
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Forestry Data Resampling PMAI}
+
+	\begin{tabular}	{p{5cm} p{4cm}}
+		\vspace{-.1cm}
+		\includegraphics[width=\maxwidth]{figure/pmaiUnbalSamp} &
+		\vspace{-.1cm}
+		\footnotesize
+		\begin{itemize}
+			\item response: maximum potential mean annual increment (PMAI)
+			\item covariates: 1) temperature, 2) precipitation, 3)Climate Moisture Index, 4) an indicator variable for shade tolerance based on Western Hemlock trees, and 5) elevation
+		\end{itemize}
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Simulations
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{PMAI Resampling}
+
+\begin{table}[ht]
+\caption{\tiny Performance summaries for 500 resamplings of PMAI forest data with 386 samples and 1500 predictions each. Prediction methods form the columns and are described in Section 3.4.  Performance measures form the rows and are described in Section 3.3. \label{PMAIsummary}}
+\scriptsize
+\begin{center}
+\begin{tabular}{|l r r r r r r r|}
+\hline
+\hline
+  & mah1 & mah5 & msn1 & msn5 & best & lm & slm \\
+\hline
+\hline
+\multicolumn{8}{|c|}{Total} \\
+RMSPE & 219.1 & 230.7 & 243.3 & 200.9 & 223.2 & 197 & 180.4 \\
+SRB & 0.437 & 0.712 & 0.064 & -0.019 & 0.446 & 0.082 & 0.058 \\
+PIC90 & 0.944 & 0.838 & 0.948 & 0.922 & 0.834 & 0.904 & 0.904 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}%
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Simulations
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{PMAI Resampling with Unbalanced Sampling}
+
+\begin{table}[ht]
+\caption{\tiny Performance summaries for 500 resamplings of PMAI forest data with 386 spatially unbalanced samples and 1500 predictions each. \label{PREFsummary}}
+\scriptsize
+\begin{center}
+\begin{tabular}{|l r r r r r r r|}
+\hline
+\hline
+  & mah1 & mah5 & msn1 & msn5 & best & lm & slm \\
+\hline
+\hline
+\multicolumn{8}{|c|}{Total} \\
+RMSPE & 637.9 & 853.6 & 457.1 & 442.2 & 576.1 & 608.1 & 269 \\
+SRB & 2.635 & 4.055 & 1.418 & 1.77 & 1.651 & 2.86 & 0.369 \\
+PIC90 & 0.248 & 0.010 & 0.626 & 0.438 & 0.308 & 0.128 & 0.92 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}%
+%
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Examples
+%-------------------------------------------------------------------------------
+
+\section{Examples}
+\subsection{}
+\begin{frame}[fragile]
+\frametitle{Nome Moose Survey}
+
+	<<include = FALSE, echo = FALSE>>=
+	library(spPlotSampCourse)
+	library(maptools)
+	path <- system.file("rawdata/moose", package = "spPlotSampCourse")
+	samplesFile <- paste(path,"/","Samples", sep = "")
+	samples <- readShapePoly(samplesFile)
+	samples@data[,"x"] <- LLtoUTM(samples@data[,"CENTRLAT"],samples@data[,"CENTRLON"])[,"x"]
+	samples@data[,"y"] <- LLtoUTM(samples@data[,"CENTRLAT"],samples@data[,"CENTRLON"])[,"y"]
+	samples@data[,"TOTAL"] <- as.numeric(as.character(samples@data[,"TOTAL"]))
+	samples@data[,"b"] <- rep(1, times = length(samples@data[,1]))
+	@
+
+	<<mooseStrat-plot, fig.width=7, fig.height=4, echo=FALSE, include = FALSE>>=
+	par(mar = c(0,0,5,0))
+	plot(samples)
+	plot(samples[samples@data[,"STRAT"] == "H",], col = rgb(.6, .2, .6), add = TRUE)
+	plot(samples[samples@data[,"STRAT"] == "L",], col = rgb(.6, .8, .6), add = TRUE)
+	addRGBClassLegend(-511500, 1701915, -500000, 1725308, 
+		rgblist = list(c(.6, .2, .6),c(.6, .8, .6)),
+		labels = c("High","Low"), cex = 2)
+	title("Stratification", cex.main = 2)
+	@
+
+	<<mooseCounts-plot, fig.width=7, fig.height=4, echo=FALSE, include = FALSE>>=
+	samples.c <- samples[samples@data[,"COUNTED"] == "Y",]
+	par(mar = c(0,0,5,0))
+	minmax <- plotPolygonsRGB(samples.c, "TOTAL")
+	addRGBRampLegend(minmax[1,1], minmax[1,2], -500000, 1691915, -488500, 1715308, 
+		printFormat = "2.0", nshades = 20, cex = 1)
+	title("Counts", cex.main = 2)
+	@
+
+	<<mooseElev-plot, fig.width=7, fig.height=4, echo=FALSE, include = FALSE>>=
+	par(mar = c(0,0,5,0))
+	minmax <- plotPolygonsRGB(samples, "ELEVMEAN")
+	addRGBRampLegend(minmax[1,1], minmax[1,2], -511500, 1701915, -500000, 1725308, 
+		printFormat = "2.0", nshades = 20, cex = 1.2)
+	title("Elevation", cex.main = 2)
+	@
+
+	\vspace{-.1cm}
+	\begin{tabular}{c}
+			\includegraphics[width=.5\maxwidth]{figure/mooseStrat-plot} 
+			\includegraphics[width=.5\maxwidth]{figure/mooseElev-plot} \\
+			\includegraphics[width=.6\maxwidth]{figure/mooseCounts-plot} 
+	\end{tabular}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Examples
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Nome Moose Survey}
+
+<<>>=
+library(spPlotSampCourse)
+library(maptools)
+path <- system.file("rawdata/moose", package = "spPlotSampCourse")
+samplesFile <- paste(path,"/","Samples", sep = "")
+samples <- readShapePoly(samplesFile)
+samples@data[,"x"] <- LLtoUTM(samples@data[,"CENTRLAT"],
+	samples@data[,"CENTRLON"])[,"x"]
+samples@data[,"y"] <- LLtoUTM(samples@data[,"CENTRLAT"],
+	samples@data[,"CENTRLON"])[,"y"]
+samples@data[,"TOTAL"] <- as.numeric(as.character(samples@data[,"TOTAL"]))
+samples@data[,"b"] <- rep(1, times = length(samples@data[,1]))
+sdata <- samples@data
+coordinates(sdata) <- c("x","y")
+@
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Examples
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Nome Moose Survey}
+
+<<cache = TRUE>>=
+moFit <- splmm(TOTAL ~ ELEVMEAN + STRAT, spdata = sdata, 
+	varComps = "exponential")
+#summary(moFit)
+summary(moFit)$coefficients
+summary(moFit)$covparms
+@
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Examples
+%-------------------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Nome Moose Survey}
+
+<<cache = TRUE>>=
+moFit <- splmm(TOTAL ~ STRAT - 1, spdata = sdata, varComps = "exponential")
+summary(moFit)$coefficients
+summary(moFit)$covparms
+FPBK <- predictBlockFinPop(moFit, "b")
+FPBK
+@
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Examples
+%-------------------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Nome Moose Survey}
+
+<<cache = TRUE>>=
+samples.H <- samples[samples@data[,"STRAT"] == "H",]
+samples.L <- samples[samples@data[,"STRAT"] == "L",]
+sdataH <- samples.H@data
+coordinates(sdataH) <- c("x","y")
+sdataL <- samples.L@data
+coordinates(sdataL) <- c("x","y")
+moFitH <- splmm(TOTAL ~ 1, spdata = sdataH, varComps = "exponential")
+summary(moFitH)$coefficients
+moFitL <- splmm(TOTAL ~ 1, spdata = sdataL, varComps = "exponential")
+summary(moFitL)$coefficients
+@
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Examples
+%-------------------------------------------------------------------------------
+\begin{frame}[fragile]
+\frametitle{Nome Moose Survey}
+
+<<cache = TRUE>>=
+FPBK.H <- predictBlockFinPop(moFitH, "b")
+FPBK.L <-predictBlockFinPop(moFitL, "b")
+rbind(FPBK.H, FPBK.L)
+FPBK.strat <- data.frame(Pred = FPBK.H[,"Pred"] + FPBK.L[,"Pred"],
+PredSE = sqrt(FPBK.H[,"Pred SE"]^2 + FPBK.L[,"Pred SE"]^2))
+FPBK.strat
+FPBK
+@
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                 Robustness
+%-------------------------------------------------------------------------------
+\section{Robustness}
+\subsection{}
+\begin{frame}[fragile]
+\frametitle{Robustness of Block Prediction Methods}
+
+\begin{itemize}
+	\item BLUP is non-parametric
+	\item REML are estimating equations, so covariance estimation is non-parametric
+	\item Predictions are robust to mis-specification of covariance model
+	\item Both predictor and predictand are linear combinations, so we can appeal to a correlated version of central limit theorem and use normal-distribution for probability statements (e.g., prediction intervals).
+\end{itemize}
+
+\end{frame}
+
+\end{document}
