@@ -1,11 +1,12 @@
 Package: spPlotSampCourse
 Maintainer: Jay Ver Hoef <jay.verhoef@noaa.gov>
 License: GPL-2
-Title: Course on Spatial Linear Mixed Models
+Title: Course on Spatial Plot Sampling Methods
 Type: Package
 LazyLoad: yes
 Author: Jay Ver Hoef
 Description: Course on Spatial Plot Sampling Methods
+Depends: maptools, sp, rgeos
 Version: 1.0
-Date: 2013-05-17
+Date: 2013-05-28
 

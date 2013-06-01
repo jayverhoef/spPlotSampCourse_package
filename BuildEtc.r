@@ -25,12 +25,10 @@ Rcmd INSTALL --build splmm
 
 #github cloud commits
 cd "/media/Hitachi2GB/00NMML/RPackages/splmmCourse_package"
-git add splmmCourse/R
-git add splmmCourse/man
-git add splmmCourse/inst
-git commit -m 'CA ozone example and meuse example from sp package'
-git push github.splmmCourse_package master
-git pull github.splmmCourse_package master
+git add .
+git commit -m 'intial push to git'
+git push github.spPlotSampCourse_package master
+git pull github.spPlotSampCourse_package master
 
 #to see an earlier version
 cd "/media/Hitachi2GB/00NMML/RPackages/splmmCourse_package/splmm/R"
@@ -38,11 +36,11 @@ git log splmm.R
 git show c742d1026aa031baf9409c0262b5bc944bb736d1:./covParmIni.R
 
 #initializing stuff
-cd "/media/Hitachi2GB/00NMML/RPackages/splmmCourse_package"
+cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package"
 git init
 git config --global jay.verhoef 'Jay Ver Hoef'
 git config --global user.email jay.verhoef@gmail.com
-git remote add github.splmmCourse_package https://github.com/jayverhoef/splmmCourse_package.git
+git remote add github.spPlotSampCourse_package https://github.com/jayverhoef/spPlotSampCourse_package.git
 git remote -v
 
 #clean up directory before committing it
