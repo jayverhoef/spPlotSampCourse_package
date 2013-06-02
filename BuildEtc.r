@@ -24,14 +24,14 @@ Rcmd INSTALL --build splmm
 #-------------------------------------------------------------------------------
 
 #github cloud commits
-cd "/media/Hitachi2GB/00NMML/RPackages/splmmCourse_package"
+cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package"
 git add .
-git commit -m 'intial push to git'
+git commit -m 'update 2 June 2013 -- still adding content'
 git push github.spPlotSampCourse_package master
 git pull github.spPlotSampCourse_package master
 
 #to see an earlier version
-cd "/media/Hitachi2GB/00NMML/RPackages/splmmCourse_package/splmm/R"
+cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package"
 git log splmm.R
 git show c742d1026aa031baf9409c0262b5bc944bb736d1:./covParmIni.R
 

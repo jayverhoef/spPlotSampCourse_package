@@ -50,6 +50,7 @@ createPredGridCountSamp <- function(bnd, plts, respVar, nNodesRequestC, nNodesRe
 		nNodesRequestF, nstart = 20, iter.max = 100)$centers
 	# create grid outside of observed plots
 	GridPtsp <- GridPtsp[is.na(over(GridPtsp, plts)[,respVar])]
-	list(GridPtsp = GridPtsp, nodesC = nodesC, nodesF = nodesF)
+	list(GridPtsp = GridPtsp, nodesC = nodesC, nodesF = nodesF, 
+		convexPolyKnotsFine = poly.gt0)
 }
 

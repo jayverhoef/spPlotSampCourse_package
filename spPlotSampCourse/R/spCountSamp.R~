@@ -45,12 +45,16 @@ spCountSamp <- function(formula, outline, plots, nNodesRequestC, nNodesRequestF,
 	plts <- stdizePlotsOut$plts
 
 	# Create Prediction Grid
-	createPredGridOut <- createPredGrid(bnd, plts, respVar, nNodesRequestC,
+	createPredGridOut <- createPredGridCountSamp(bnd, plts, respVar, nNodesRequestC,
 		nNodesRequestF, nodeSetSeed)
 	GridPtsp <- createPredGridOut$GridPtsp
 	nodesC <- createPredGridOut$nodesC
 	nodesF <- createPredGridOut$nodesF
-
+	convexPolyKnotsFine <- createPredGridOut$convexPolyKnotsFine
+	convexPolyKnotsFineMat <- convexPolyKnotsFine@polygons[[1]]@Polygons[[1]]@coords
+	convexPolyKnotsFineMat[,"x"] <- convexPolyKnotsFineMat[,"x"]*xystdv.fix + xmean.fix
+	convexPolyKnotsFineMat[,"y"] <- convexPolyKnotsFineMat[,"y"]*xystdv.fix + ymean.fix
+	convexPolyKnotsFine <- SpatialPolygons(list(Polygons(list(Polygon(convexPolyKnotsFineMat)), ID = 1)))
 	# Create distance matrices among knots for starting values and parameter boundaries
 	distCC <- distBetween2xySets(nodesC, nodesC)
 	distFF <- distBetween2xySets(nodesF, nodesF)
@@ -198,10 +202,11 @@ spCountSamp <- function(formula, outline, plots, nNodesRequestC, nNodesRequestF,
 		elapsedTime = EndTime - StartTime,
 		nNodesRequestC = nNodesRequestC, 
 		nNodesRequestF = nNodesRequestF, 
-		NodeLocationsC = data.frame(x = nodesC[,1]*xystdv.fix + xmean.fix, 
+		nodeLocationsC = data.frame(x = nodesC[,1]*xystdv.fix + xmean.fix, 
 			y = nodesC[,2]*xystdv.fix + ymean.fix),
 		nodeLocationsF = data.frame(x = nodesF[,1]*xystdv.fix + xmean.fix, 
-			y = nodesF[,2]*xystdv.fix + ymean.fix))
+			y = nodesF[,2]*xystdv.fix + ymean.fix),
+		convexPolyKnotsFine = convexPolyKnotFine)
 
 	class(spCntSmp) <- "spCountSamp"
 	spCntSmp

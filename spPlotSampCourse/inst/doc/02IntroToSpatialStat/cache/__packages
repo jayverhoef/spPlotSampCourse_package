@@ -1,0 +1,13 @@
+base
+deldir
+filehash
+foreign
+knitr
+lattice
+maptools
+mgcv
+sp
+spatstat
+spPlotSampCourse
+tikzDevice
+xtable

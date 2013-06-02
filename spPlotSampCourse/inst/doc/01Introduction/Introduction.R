@@ -1,0 +1,50 @@
+
+## @knitr setup, include=FALSE
+# smaller font size for chunks
+opts_chunk$set(size = 'footnotesize')
+purl("Introduction.Rnw") ## Dump all R code to a file
+
+
+## @knitr Introductory-plot, fig.width=10, fig.height=3.5, echo=FALSE, dev = "tikz"
+layout(matrix(1:3, nrow = 1))
+par(mar = c(0,1,8,3))
+plot(c(0,1),c(0,1), type = "n", xlab = "", ylab ="", xaxt = "n", yaxt = "n", bty = "n")
+rect(0,0,1,1,lwd = 2)
+mtext("1) Block Kriging", 3, cex = 1.5, line = 1, adj = -.1)
+rect(0.1666667, 0.1666667, 1 - 0.1666667, 1 - 0.1666667, lty = 5, lwd = 7, col = "lightgreen")
+text(.06,.93,"$R$", cex = 3)
+text(.23,.76,"$A$", cex = 3)
+set.seed(12)
+points(runif(20), runif(20), pch = 19, cex = 2, col = "blue")
+points(runif(1), runif(1), pch = 1, cex = 2)
+text(.58,.68,"$Z(\\bs_i)$", cex = 2)
+text(.73,.52,"$Z(\\bs_0)$", cex = 2)
+plot(c(0,1),c(0,1), type = "n", xlab = "", ylab ="", xaxt = "n", yaxt = "n", bty = "n")
+rect(0,0,1,1,lwd = 2)
+mtext("2)Block Prediction\n for Finite Populations\n on a Grid", 3, cex = 1.6, line = 1.5, adj = 0, padj = 0.2)
+rect(0.1666667, 0.1666667, 1 - 0.1666667, 1 - 0.1666667, lty = 5, lwd = 7, col = "lightgreen")
+for(i in 1:5) lines(c(i/6,i/6),c(0,1), lwd = 2)
+for(i in 1:5) lines(c(0,1),c(i/6,i/6), lwd = 2)
+rect(1*(1/6),3*(1/6),2*(1/6),4*(1/6), lwd = 5, col = "blue")
+text(1.5*(1/6),3.5*(1/6),"$B_i$", cex = 2.5, col = "white")
+rect(2*(1/6),2*(1/6),3*(1/6),3*(1/6), lwd = 5, col = "blue")
+rect(3*(1/6),3*(1/6),4*(1/6),4*(1/6), lwd = 5, col = "blue")
+rect(1*(1/6),5*(1/6),2*(1/6),6*(1/6), lwd = 5, col = "blue")
+rect(4*(1/6),1*(1/6),5*(1/6),2*(1/6), lwd = 5, col = "blue")
+rect(5*(1/6),4*(1/6),6*(1/6),5*(1/6), lwd = 5, col = "blue")
+rect(0*(1/6),0*(1/6),1*(1/6),1*(1/6), lwd = 5, col = "blue")
+plot(c(0,1),c(0,1), type = "n", xlab = "", ylab ="", xaxt = "n", yaxt = "n", bty = "n")
+rect(0,0,1,1,lwd = 2)
+mtext("3)Block Prediction\n for Finite Populations\n Irregularly Spaced", 3, cex = 1.6, line = 1.5, adj = 0, padj = 0.2)
+rect(0.1666667, 0.1666667, 1 - 0.1666667, 1 - 0.1666667, lty = 5, lwd = 7, col = "lightgreen")
+rect(1.5*(1/6),3*(1/6),2.5*(1/6),4*(1/6), lwd = 5, col = "blue")
+text(2*(1/6),3.5*(1/6),"$B_i$", cex = 2.5, col = "white")
+rect(1.9*(1/6),1.2*(1/6),2.9*(1/6),2.2*(1/6), lwd = 5, col = "blue")
+rect(3*(1/6),3.5*(1/6),4*(1/6),4.5*(1/6), lwd = 5, col = "blue")
+rect(.8*(1/6),4.6*(1/6),1.8*(1/6),5.6*(1/6), lwd = 5, col = "blue")
+rect(4.5*(1/6),.5*(1/6),5.5*(1/6),1.5*(1/6), lwd = 5, col = "blue")
+rect(4.7*(1/6),3.8*(1/6),5.7*(1/6),4.8*(1/6), lwd = 5, col = "blue")
+rect(0.2*(1/6),0.2*(1/6),1.2*(1/6),1.2*(1/6), lwd = 5, col = "blue")
+rect(0.1666667, 0.1666667, 1 - 0.1666667, 1 - 0.1666667, lty = 5, lwd = 7)
+
+

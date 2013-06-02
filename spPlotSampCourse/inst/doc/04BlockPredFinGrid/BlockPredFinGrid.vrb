@@ -1,0 +1,9 @@
+\frametitle {Robustness of Block Prediction Methods}
+
+\begin{itemize}
+\item BLUP is non-parametric
+\item REML are estimating equations, so covariance estimation is non-parametric
+\item Predictions are robust to mis-specification of covariance model
+\item Both predictor and predictand are linear combinations, so we can appeal to a correlated version of central limit theorem and use normal-distribution for probability statements (e.g., prediction intervals).
+\end{itemize}
+
