@@ -179,8 +179,9 @@
 
 
 
+\vspace{-1cm}
 \begin{center}
-	\includegraphics[width = .95\maxwidth]{figure/icyBayIntro-plot} 
+	\includegraphics[width = .8\maxwidth]{figure/icyBayIntro-plot} 
 \end{center}
 
 \end{frame}
@@ -199,7 +200,7 @@
 		\item for the actual number of seals, not the mean of some assumed process that generated the data, 
 		\item have a variance estimator with a population correction factor that shrinks to zero as the proportion of the study area that gets sampled goes to one, 
 		\item unbiased with valid confidence intervals, 
-		\item able to accommodate nonstationary variance throughout the area
+		\item able to accommodate nonstationary variance and excessive zeros throughout the area
 		\end{itemize}
 
 \end{frame}
@@ -527,7 +528,7 @@ where \\
 	\item 
 	$\widehat{\var}_{WR}(\widehat{T}(A)) = \omega_{WR}\widetilde{\var}(\widehat{T}(A))$
 	\item 
-	$\widehat{\var}_{TG}(\widehat{T}(A);p) = \omega_{TG}{p}\widetilde{\var}(\widehat{T}(A))$
+	$\widehat{\var}_{TG}(\widehat{T}(A);p) = \omega_{TG}(p)\widetilde{\var}(\widehat{T}(A))$
 	\item 
 $\widehat{\var}_{TL}(\widehat{T}(A);p) = \frac{|\cU|}{n_p}\sum_{j=1}^{n_p}\exp(\bx_{\hat{\brho}}(\bu_j)\upp\hat{\bbeta})\times$ $\max(1,\omega_{TG}(p)I(\exp(\bx(\bs_j)\upp \hat{\bbeta}) \ge \phi_{(\lfloor np \rfloor)}) + $  $\bd\upp\left[ |B| \sum_{i=1}^{n} \bx(\bs_i)\bx({\bs_i})\upp\exp(\bx(\bs_i)\upp \hat{\bbeta}) \right]\upi\bd $ \\
 where $I(\cdot)$ is the indicator function
@@ -551,26 +552,90 @@ where $I(\cdot)$ is the indicator function
 \end{frame}
 
 %-------------------------------------------------------------------------------
+%                        Simulation Experiment 1
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Simulation Experiment 1}
+
+\footnotesize
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrrr}
+  \hline
+  \hline
+	&  & \multicolumn{4}{c}{Knots} \\ 
+ & SRS & $\begin{array}{c}K_C=3  \\ K_F=8 \end{array}$ & $\begin{array}{c}K_C=4  \\ K_F=14 \end{array}$ & $\begin{array}{c}K_C=5  \\ K_F=20 \end{array}$ & $\begin{array}{c}K_C=6  \\ K_F=26 \end{array}$ \\
+  \hline
+bias & 6.425 & -1.277 & -9.735 & 7.048 & 5.941 \\ 
+  RMSPE & 58.060 & 57.493 & 59.036 & 58.243 & 58.038 \\ 
+  CI90 & 0.914 & 0.898 & 0.883 & 0.892 & 0.895 \\ 
+  CI90$_{OD}$ &  & 0.918 & 0.927 & 0.897 & 0.904 \\ 
+  CI90$_{WR}$ &  & 0.900 & 0.892 & 0.895 & 0.895 \\ 
+  CI90$_{TG}$ &  & 0.914 & 0.920 & 0.939 & 0.957 \\ 
+  CI90$_{TL}$ &  & 0.906 & 0.906 & 0.917 & 0.930 \\ 
+  fail rate & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                        Simulation Experiment 2
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Simulation Experiment 2}
+
+\footnotesize
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrrr}
+  \hline
+  \hline
+	&  & \multicolumn{4}{c}{Knots} \\ 
+ & SRS & $\begin{array}{c}K_C=3  \\ K_F=8 \end{array}$ & $\begin{array}{c}K_C=4  \\ K_F=14 \end{array}$ & $\begin{array}{c}K_C=5  \\ K_F=20 \end{array}$ & $\begin{array}{c}K_C=6  \\ K_F=26 \end{array}$ \\
+  \hline
+bias & 79.234 & -1.333 & -7.632 & 14.511 & 13.856 \\ 
+  RMSPE & 104.979 & 66.347 & 68.846 & 68.311 & 68.527 \\ 
+  CI90 & 0.726 & 0.876 & 0.860 & 0.891 & 0.889 \\ 
+  CI90$_{OD}$ &  & 0.908 & 0.928 & 0.901 & 0.902 \\ 
+  CI90$_{WR}$ &  & 0.888 & 0.868 & 0.894 & 0.891 \\ 
+  CI90$_{TG}$ &  & 0.902 & 0.903 & 0.952 & 0.980 \\ 
+  CI90$_{TL}$ &  & 0.895 & 0.880 & 0.927 & 0.940 \\ 
+  fail rate & 0.000 & 0.000 & 0.000 & 0.000 & 0.001 \\ 
+  \hline
+   \hline
+\end{tabular}
+\end{table}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
 %                        Simulation Experiment 3
 %-------------------------------------------------------------------------------
 
 \begin{frame}[fragile]
 \frametitle{Simulation Experiment 3}
 
+\footnotesize
 \begin{table}[ht]
 \centering
-\begin{tabular}{rrrrr}
+\begin{tabular}{rrrrrr}
   \hline
- & knots1 & knots2 & knots3 & knots4 \\ 
   \hline
-bias & -2.389 & -4.365 & -2.919 & -1.637 \\ 
-  RMSPE & 79.207 & 79.250 & 79.285 & 80.175 \\ 
-  CI90 & 0.775 & 0.772 & 0.781 & 0.777 \\ 
-  CI90OD & 0.801 & 0.783 & 0.789 & 0.782 \\ 
-  CI90WR & 0.918 & 0.906 & 0.865 & 0.837 \\ 
-  CI90TG & 0.923 & 0.930 & 0.929 & 0.946 \\ 
-  CI90TL & 0.871 & 0.883 & 0.878 & 0.903 \\ 
-  fail & 0.000 & 0.000 & 0.000 & 0.018 \\ 
+	&  & \multicolumn{4}{c}{Knots} \\ 
+ & SRS & $\begin{array}{c}K_C=3  \\ K_F=8 \end{array}$ & $\begin{array}{c}K_C=4  \\ K_F=14 \end{array}$ & $\begin{array}{c}K_C=5  \\ K_F=20 \end{array}$ & $\begin{array}{c}K_C=6  \\ K_F=26 \end{array}$ \\
+  \hline
+bias & 214.816 & -2.389 & -4.365 & -2.919 & -1.637 \\ 
+  RMSPE & 235.713 & 79.207 & 79.250 & 79.285 & 80.175 \\ 
+  CI90 & 0.774 & 0.775 & 0.772 & 0.781 & 0.777 \\ 
+  CI90$_{OD}$ &  & 0.801 & 0.783 & 0.789 & 0.782 \\ 
+  CI90$_{WR}$ &  & 0.918 & 0.906 & 0.865 & 0.837 \\ 
+  CI90$_{TG}$ &  & 0.923 & 0.930 & 0.929 & 0.946 \\ 
+  CI90$_{TL}$ &  & 0.871 & 0.883 & 0.878 & 0.903 \\ 
+  fail rate & 0.000 & 0.000 & 0.000 & 0.000 & 0.018 \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -584,23 +649,39 @@ bias & -2.389 & -4.365 & -2.919 & -1.637 \\
 \begin{frame}[fragile]
 \frametitle{Simulation Experiment 4}
 
+\footnotesize
 \begin{table}[ht]
 \centering
-\begin{tabular}{rrrrr}
+\begin{tabular}{rrrrrr}
   \hline
- & knots1 & knots2 & knots3 & knots4 \\ 
   \hline
-bias & 5.179 & 3.440 & 7.139 & 14.536 \\ 
-  RMSPE & 60.403 & 61.021 & 61.808 & 67.601 \\ 
-  CI90 & 0.831 & 0.825 & 0.826 & 0.836 \\ 
-  CI90OD & 0.844 & 0.831 &  &  \\ 
-  CI90WR & 0.939 & 0.928 & 0.924 & 0.917 \\ 
-  CI90TG & 0.929 & 0.919 & 0.909 & 0.918 \\ 
-  CI90TL & 0.893 & 0.892 & 0.885 & 0.888 \\ 
-  fail & 0.000 & 0.000 & 0.000 & 0.013 \\ 
+	&  & \multicolumn{4}{c}{Knots} \\ 
+ & SRS & $\begin{array}{c}K_C=3  \\ K_F=8 \end{array}$ & $\begin{array}{c}K_C=5  \\ K_F=16 \end{array}$ & $\begin{array}{c}K_C=7  \\ K_F=24 \end{array}$ & $\begin{array}{c}K_C=9  \\ K_F=32 \end{array}$ \\
+  \hline
+bias & 148.523 & 5.179 & 3.440 & 7.287 & 14.629 \\ 
+  RMSPE & 163.516 & 60.403 & 61.021 & 62.102 & 64.136 \\ 
+  CI90 & 0.834 & 0.831 & 0.825 & 0.826 & 0.833 \\ 
+  CI90$_{OD}$ &  & 0.844 & 0.831 & 0.827 & 0.833 \\ 
+  CI90$_{WR}$ &  & 0.939 & 0.928 & 0.923 & 0.913 \\ 
+  CI90$_{TG}$ &  & 0.929 & 0.919 & 0.907 & 0.920 \\ 
+  CI90$_{TL}$ &  & 0.893 & 0.892 & 0.884 & 0.886 \\ 
+  fail rate & 0.000 & 0.000 & 0.000 & 0.000 & 0.242 \\ 
    \hline
 \end{tabular}
 \end{table}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                        Simulation Experiment 5
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Effect of $p$ in Trimmed Overdispersion Estimator}
+
+\begin{center}
+\includegraphics[width = .85\maxwidth]{figure/CI90TrimProp-plot}
+\end{center}
 
 \end{frame}
 
@@ -669,15 +750,15 @@ sealDensity * totalArea
 ## Estimates:
 ## 
 ## Total:
-## [1] 4017
+## [1] 4068
 ## Standard Errors:
 ##      SE SE.ODTrad SE.ODTrimGlobal SE.ODTrimLocal SE.ODRegr
-## 1 112.2      9721           326.2            230     392.4
+## 1 113.7      1379             236          198.5     403.1
 ## 
 ## 
 ## Range Parameters:
 ##   coarseScale fineScale
-## 1        8567      1055
+## 1        9516      2974
 ## 
 ## 
 ## Proportion Surveyed:
@@ -693,10 +774,10 @@ sealDensity * totalArea
 %                        Goals
 %-------------------------------------------------------------------------------
 
-\section{summary}
+\section{Summary}
 \subsection{}
 \begin{frame}[fragile]
-\frametitle{Goals}
+\frametitle{Recall the Goals}
 
 \footnotesize
 	An estimator that is:
@@ -705,7 +786,7 @@ sealDensity * totalArea
 		\item for the actual number of seals, not the mean of some assumed process that generated the data, 
 		\item have a variance estimator with a population correction factor that shrinks to zero as the proportion of the study area that gets sampled goes to one, 
 		\item unbiased with valid confidence intervals, 
-		\item able to accommodate nonstationary variance throughout the area
+		\item able to accommodate nonstationary variance and excessive zeros throughout the area
 		\end{itemize}
 
 \end{frame}

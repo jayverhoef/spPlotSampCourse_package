@@ -1,0 +1,5 @@
+%\VignetteIndexEntry{Block Prediction for Irregular Plots of Counts}
+\documentclass{article}
+\begin{document}
+\end{document}
+

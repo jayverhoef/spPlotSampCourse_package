@@ -10,7 +10,7 @@ R CMD build spPlotSampCourse
 R CMD INSTALL spPlotSampCourse_1.0.tar.gz
 
 # knitr
-cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/IntroToSpatialStat"
+cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/05CountSamp"
 R
 library(knitr)
 knit("IntroToSpatialStat.Rnw")

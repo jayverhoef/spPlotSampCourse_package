@@ -1,11 +1,12 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.5.13)  1 JUN 2013 18:57
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.23)  3 JUN 2013 12:19
 entering extended mode
  %&-line parsing enabled.
-**\nonstopmode \input{"/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPl
-otSampCourse/inst/doc/05CountSamp/CountSamp.tex"}
+**\nonstopmode \input{"/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_pack
+age/spPlotSampCourse/inst/doc/05CountSamp/CountSamp.tex"}
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.tex (/usr/share/texmf/tex/latex/beamer/base/beamer.cls
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.tex
+(/usr/share/texmf/tex/latex/beamer/base/beamer.cls
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasercs.sty
 Package: beamerbasercs 2010/06/12 (rcs-revision c3821710bb40)
 )
@@ -800,8 +801,8 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
 ))
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.aux)
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.aux)
 \openout1 = `CountSamp.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 136.
@@ -821,7 +822,8 @@ LaTeX Font Info:    ... okay on input line 136.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 136.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 136.
 
- (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 136.
@@ -898,10 +900,10 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 LaTeX Info: Redefining \ref on input line 136.
 LaTeX Info: Redefining \pageref on input line 136.
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.out)
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.out)
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.out)
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.out)
 \@outlinefile=\write5
 \openout5 = `CountSamp.out'.
 
@@ -969,8 +971,8 @@ Dictionary: translator-numbers-dictionary, Language: English
 tionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.nav)
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
 (hyperref)                setting the option has no effect on input line 141.
@@ -981,41 +983,43 @@ Package hyperref Warning: Option `pdfauthor' has already been used,
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb
-<figure/Introductory-plot.pdf, id=156, 722.7pt x 252.93997pt>
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
+<figure/Introductory-plot.pdf, id=165, 722.7pt x 252.93997pt>
 File: figure/Introductory-plot.pdf Graphic file (type pdf)
 
 <use figure/Introductory-plot.pdf>) [2
 
- </media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc
-/05CountSamp/figure/Introductory-plot.pdf>]
+ </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
+inst/doc/05CountSamp/figure/Introductory-plot.pdf>]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb
-<figure/icyBayIntro-plot.pdf, id=237, 433.62pt x 289.08pt>
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
+<figure/icyBayIntro-plot.pdf, id=249, 578.16pt x 578.16pt>
 File: figure/icyBayIntro-plot.pdf Graphic file (type pdf)
 
 <use figure/icyBayIntro-plot.pdf>)
-Overfull \vbox (9.4863pt too high) detected at line 186
+Overfull \vbox (32.23203pt too high) detected at line 187
  []
 
 [3
 
- </media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc
-/05CountSamp/figure/icyBayIntro-plot.pdf>]
+ </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
+inst/doc/05CountSamp/figure/icyBayIntro-plot.pdf>]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
 LaTeX Font Info:    Try loading font information for U+msa on input line 6.
- (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 6.
+
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
@@ -1029,8 +1033,8 @@ File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 5.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8> not available
@@ -1051,9 +1055,9 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <6> not available
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb
-<figure/irregSamples-plot.pdf, id=430, 433.62pt x 433.62pt>
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
+<figure/irregSamples-plot.pdf, id=451, 433.62pt x 433.62pt>
 File: figure/irregSamples-plot.pdf Graphic file (type pdf)
 
 <use figure/irregSamples-plot.pdf>
@@ -1063,13 +1067,13 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 18.
 ) [6
 
- </media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc
-/05CountSamp/figure/irregSamples-plot.pdf>]
+ </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
+inst/doc/05CountSamp/figure/irregSamples-plot.pdf>]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
 File: figure/irregSamples-plot.pdf Graphic file (type pdf)
  <use figure/irregSamples-plot.pdf>
 Overfull \hbox (15.46405pt too wide) in paragraph at lines 3--17
@@ -1082,9 +1086,9 @@ Overfull \hbox (15.46405pt too wide) in paragraph at lines 3--17
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb
-<figure/spatialBasisExplanation-plot.pdf, id=557, 433.62pt x 433.62pt>
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
+<figure/spatialBasisExplanation-plot.pdf, id=584, 433.62pt x 433.62pt>
 File: figure/spatialBasisExplanation-plot.pdf Graphic file (type pdf)
 
 <use figure/spatialBasisExplanation-plot.pdf>
@@ -1106,182 +1110,220 @@ Overfull \hbox (15.46405pt too wide) in paragraph at lines 6--18
 
 ) [8
 
- </media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc
-/05CountSamp/figure/spatialBasisExplanation-plot.pdf>]
+ </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
+inst/doc/05CountSamp/figure/spatialBasisExplanation-plot.pdf>]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb) [9
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb) [9
 
 ]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb) [10
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb) [10
 
 ]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb) [11
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb) [11
 
 ]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb) [12
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb) [12
 
 ]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb) [13
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb) [13
 
 ]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb <figure/sim2-plot.pdf, id=938, 433.62pt x 433.62pt>
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
+<figure/sim2-plot.pdf, id=983, 433.62pt x 433.62pt>
 File: figure/sim2-plot.pdf Graphic file (type pdf)
+ <use figure/sim2-plot.pdf>) [14
 
-<use figure/sim2-plot.pdf>) [14
-
- </media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc
-/05CountSamp/figure/sim2-plot.pdf>]
+ </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
+inst/doc/05CountSamp/figure/sim2-plot.pdf>]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb
-<figure/exFittedSurface-plot.pdf, id=1001, 578.16pt x 433.62pt>
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
+<figure/exFittedSurface-plot.pdf, id=1049, 578.16pt x 433.62pt>
 File: figure/exFittedSurface-plot.pdf Graphic file (type pdf)
 
 <use figure/exFittedSurface-plot.pdf>) [15
 
- </media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc
-/05CountSamp/figure/exFittedSurface-plot.pdf>]
+ </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
+inst/doc/05CountSamp/figure/exFittedSurface-plot.pdf>]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb
-<figure/resids4overdisp-plot.pdf, id=1065, 433.62pt x 433.62pt>
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
+<figure/resids4overdisp-plot.pdf, id=1116, 433.62pt x 433.62pt>
 File: figure/resids4overdisp-plot.pdf Graphic file (type pdf)
 
 <use figure/resids4overdisp-plot.pdf>
-<figure/rawresids4overdisp-plot.pdf, id=1066, 433.62pt x 433.62pt>
+<figure/rawresids4overdisp-plot.pdf, id=1117, 433.62pt x 433.62pt>
 File: figure/rawresids4overdisp-plot.pdf Graphic file (type pdf)
 
 <use figure/rawresids4overdisp-plot.pdf>) [16
 
- </media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc
-/05CountSamp/figure/resids4overdisp-plot.pdf> </media/9016-4EF8/RPackages/spPlo
-tSampCourse_package/spPlotSampCourse/inst/doc/05CountSamp/figure/rawresids4over
-disp-plot.pdf>]
+ </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
+inst/doc/05CountSamp/figure/resids4overdisp-plot.pdf> </media/Hitachi2GB/00NMML
+/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/05CountSamp/figur
+e/rawresids4overdisp-plot.pdf>]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb) [17
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb) [17
 
 ]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb) [18
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb) [18
 
 ]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb) [19
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb) [19
 
 ]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb
-<figure/SimDataCrop.pdf, id=1313, 478.78876pt x 490.83376pt>
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
+<figure/SimDataCrop.pdf, id=1376, 478.78876pt x 490.83376pt>
 File: figure/SimDataCrop.pdf Graphic file (type pdf)
 
 <use figure/SimDataCrop.pdf>) [20
 
- </media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc
-/05CountSamp/figure/SimDataCrop.pdf>]
+ </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
+inst/doc/05CountSamp/figure/SimDataCrop.pdf>]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb) [21
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb) [21
 
 ]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb) [22
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb) [22
 
 ]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb
-<figure/icyBayKnots-plot.pdf, id=1497, 578.16pt x 433.62pt>
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb) [23
+
+]
+\openout4 = `CountSamp.vrb'.
+
+
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb) [24
+
+]
+\openout4 = `CountSamp.vrb'.
+
+
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
+<figure/CI90TrimProp-plot.pdf, id=1691, 794.97pt x 578.16pt>
+File: figure/CI90TrimProp-plot.pdf Graphic file (type pdf)
+
+<use figure/CI90TrimProp-plot.pdf>)
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 686.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 686.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 686.
+
+Overfull \vbox (4.82387pt too high) detected at line 686
+ []
+
+[25
+
+ </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
+inst/doc/05CountSamp/figure/CI90TrimProp-plot.pdf>]
+\openout4 = `CountSamp.vrb'.
+
+
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
+<figure/icyBayKnots-plot.pdf, id=1759, 578.16pt x 433.62pt>
 File: figure/icyBayKnots-plot.pdf Graphic file (type pdf)
 
 <use figure/icyBayKnots-plot.pdf>)
-Overfull \vbox (10.89287pt too high) detected at line 628
+Overfull \vbox (10.89287pt too high) detected at line 709
  []
 
-[23
+[26
 
- </media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc
-/05CountSamp/figure/icyBayKnots-plot.pdf>]
+ </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
+inst/doc/05CountSamp/figure/icyBayKnots-plot.pdf>]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb
-<figure/icyBayFit-plot.pdf, id=1561, 578.16pt x 433.62pt>
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
+<figure/icyBayFit-plot.pdf, id=1826, 578.16pt x 433.62pt>
 File: figure/icyBayFit-plot.pdf Graphic file (type pdf)
 
 <use figure/icyBayFit-plot.pdf>)
-Overfull \vbox (33.94475pt too high) detected at line 646
+Overfull \vbox (33.94475pt too high) detected at line 727
  []
 
-[24
+[27
 
- </media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc
-/05CountSamp/figure/icyBayFit-plot.pdf>]
+ </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
+inst/doc/05CountSamp/figure/icyBayFit-plot.pdf>]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 5.
- (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <6> not available
 (Font)              Font shape `OT1/pcr/b/n' tried instead on input line 6.
-) [25
+) [28
 
 ]
 \openout4 = `CountSamp.vrb'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.vrb) [26
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.vrb) [29
 
 ]
 \tf@nav=\write6
@@ -1294,44 +1336,44 @@ LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <6> not available
 \openout8 = `CountSamp.snm'.
 
 
-(/media/9016-4EF8/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/
-05CountSamp/CountSamp.aux) ) 
+(/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
+nst/doc/05CountSamp/CountSamp.aux) ) 
 Here is how much of TeX's memory you used:
- 16512 strings out of 493848
- 309044 string characters out of 1152823
- 389900 words of memory out of 3000000
- 19159 multiletter control sequences out of 15000+50000
- 41986 words of font info for 104 fonts, out of 3000000 for 9000
+ 16561 strings out of 493848
+ 310822 string characters out of 1152823
+ 396527 words of memory out of 3000000
+ 19192 multiletter control sequences out of 15000+50000
+ 48889 words of font info for 125 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 50i,19n,59p,581b,745s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.e
-nc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-texlive/fonts/type1/
-public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
-onts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi
-9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmib10.pfb></us
-r/share/texmf-texlive/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texl
-ive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss
-10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
-r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fo
-nts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/fonts/type1/pu
-blic/amsfonts/symbols/msam10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/symbols/msbm10.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/uc
-rb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/sha
-re/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/
-fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/h
-elvetic/uhvro8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplb8a.p
-fb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/te
-xmf-texlive/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on CountSamp.pdf (26 pages, 1243576 bytes).
+ 50i,19n,59p,589b,745s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/b
+ase/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/
+texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
+/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmib10.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
+/cm/cmss10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-texlive/fonts/type1/
+public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-texlive/fonts/type1/urw/co
+urier/ucrb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb><
+/usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-
+texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/typ
+e1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/
+uplb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr8a.pfb></usr/
+share/texmf-texlive/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on CountSamp.pdf (29 pages, 1310018 bytes).
 PDF statistics:
- 1840 PDF objects out of 2073 (max. 8388607)
- 67 named destinations out of 1000 (max. 500000)
- 144 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2115 PDF objects out of 2487 (max. 8388607)
+ 73 named destinations out of 1000 (max. 500000)
+ 149 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,5 +5,5 @@
 \beamer@sectionintoc {3}{Inference}{10}{0}{3}
 \beamer@sectionintoc {4}{Overdispersion}{16}{0}{4}
 \beamer@sectionintoc {5}{Simulations}{20}{0}{5}
-\beamer@sectionintoc {6}{Example}{23}{0}{6}
-\beamer@sectionintoc {7}{summary}{26}{0}{7}
+\beamer@sectionintoc {6}{Example}{26}{0}{6}
+\beamer@sectionintoc {7}{Summary}{29}{0}{7}

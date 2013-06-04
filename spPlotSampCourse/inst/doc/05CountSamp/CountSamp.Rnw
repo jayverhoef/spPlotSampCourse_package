@@ -124,23 +124,45 @@ purl("CountSamp.Rnw") ## Dump all R code to a file
 \begin{frame}[fragile]
 \frametitle{Motivating Example}
 
-	<<icyBayIntro-plot, fig.width=6, fig.height=4, echo=FALSE, include = FALSE, cache = TRUE>>=
+	<<icyBayIntro-plot, fig.width=8, fig.height=8, echo=FALSE, include = FALSE, cache = TRUE>>=
 	library(spPlotSampCourse)
 	path <- system.file("rawdata/seals", package = "spPlotSampCourse")
 	outlineFile <- paste(path,"/","outline", sep = "")
 	outline <- readShapePoly(outlineFile)
 	plotsFile <- paste(path,"/","plots", sep = "")
 	plots <- readShapePoly(plotsFile)
-	par(mar = c(0.1,0.1,0.1,0.1))
+	par(mar = c(0,0,0,0))
+	plotsub <- plots[plots@data[,"counts"] > 0,]
 	plot(outline)
-	minmax <- plotPolygonsRGB(plots, colorCol = "counts", add = TRUE, border = par("bg"))
-	addRGBRampLegend(minmax[,1], minmax[,2], 683353, 1182043, 684490, 1188985, 
-		printFormat = "2.0")
-	text(686700, 1182800, "Icy Bay, Alaska, 2008", pos = 4)
+	qtiles <- quantile(plotsub@data$counts, p = (1:3)/4)
+	breaks <- c(min(plotsub@data$counts)-1e-10, 
+		qtiles, max(plotsub@data$counts))
+	cramp <- c(rgb(0,0,1), rgb(.33,.6,.67), rgb(.67,.6,.33), rgb(1,0,0))
+	ob <- plotsub
+	colorCol <- "counts"
+	plot(plotsub[plotsub@data$counts > breaks[1] & plotsub@data$counts <= breaks[2], ],
+		col = cramp[1], add = TRUE, border = par("bg"))
+	plot(plotsub[plotsub@data$counts > breaks[2] & plotsub@data$counts <= breaks[3], ],
+		col = cramp[2], add = TRUE, border = par("bg"))
+	plot(plotsub[plotsub@data$counts > breaks[3] & plotsub@data$counts <= breaks[4], ],
+		col = cramp[3], add = TRUE, border = par("bg"))
+	plot(plotsub[plotsub@data$counts > breaks[4] & plotsub@data$counts <= breaks[5], ],
+		col = cramp[4], add = TRUE, border = par("bg"))
+	plot(plots, add = TRUE)
+	addBreakColorLegend(682464, 1181494, 684511, 1189428, 
+		breaks = breaks, colors = cramp, printFormat = "2.0", cex = 1.1)
+	SpatialPolygonsRescale(layout.scale.bar(), offset = c(688240, 1181567),
+		scale = 5000, fill = c("transparent","black"), plot.grid = FALSE)
+	text(688203,1182408,"0", cex = 1.5)
+	text(693175,1182408,"5 km", cex = 1.5)
+	SpatialPolygonsRescale(layout.north.arrow(), offset = c(697562,1193085),
+		scale = 2000, col = "green", plot.grid = FALSE)
+	text(685332, 1196567, "Icy Bay, Alaska, 2008", pos = 4, cex = 2.5)
 @  
 
+\vspace{-1cm}
 \begin{center}
-	\includegraphics[width = .95\maxwidth]{figure/icyBayIntro-plot} 
+	\includegraphics[width = .8\maxwidth]{figure/icyBayIntro-plot} 
 \end{center}
 
 \end{frame}
@@ -159,7 +181,7 @@ purl("CountSamp.Rnw") ## Dump all R code to a file
 		\item for the actual number of seals, not the mean of some assumed process that generated the data, 
 		\item have a variance estimator with a population correction factor that shrinks to zero as the proportion of the study area that gets sampled goes to one, 
 		\item unbiased with valid confidence intervals, 
-		\item able to accommodate nonstationary variance throughout the area
+		\item able to accommodate nonstationary variance and excessive zeros throughout the area
 		\end{itemize}
 
 \end{frame}
@@ -687,7 +709,7 @@ where \\
 	\item 
 	$\widehat{\var}_{WR}(\widehat{T}(A)) = \omega_{WR}\widetilde{\var}(\widehat{T}(A))$
 	\item 
-	$\widehat{\var}_{TG}(\widehat{T}(A);p) = \omega_{TG}{p}\widetilde{\var}(\widehat{T}(A))$
+	$\widehat{\var}_{TG}(\widehat{T}(A);p) = \omega_{TG}(p)\widetilde{\var}(\widehat{T}(A))$
 	\item 
 $\widehat{\var}_{TL}(\widehat{T}(A);p) = \frac{|\cU|}{n_p}\sum_{j=1}^{n_p}\exp(\bx_{\hat{\brho}}(\bu_j)\upp\hat{\bbeta})\times$ $\max(1,\omega_{TG}(p)I(\exp(\bx(\bs_j)\upp \hat{\bbeta}) \ge \phi_{(\lfloor np \rfloor)}) + $  $\bd\upp\left[ |B| \sum_{i=1}^{n} \bx(\bs_i)\bx({\bs_i})\upp\exp(\bx(\bs_i)\upp \hat{\bbeta}) \right]\upi\bd $ \\
 where $I(\cdot)$ is the indicator function
@@ -711,26 +733,90 @@ where $I(\cdot)$ is the indicator function
 \end{frame}
 
 %-------------------------------------------------------------------------------
+%                        Simulation Experiment 1
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Simulation Experiment 1}
+
+\footnotesize
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrrr}
+  \hline
+  \hline
+	&  & \multicolumn{4}{c}{Knots} \\ 
+ & SRS & $\begin{array}{c}K_C=3  \\ K_F=8 \end{array}$ & $\begin{array}{c}K_C=4  \\ K_F=14 \end{array}$ & $\begin{array}{c}K_C=5  \\ K_F=20 \end{array}$ & $\begin{array}{c}K_C=6  \\ K_F=26 \end{array}$ \\
+  \hline
+bias & 6.425 & -1.277 & -9.735 & 7.048 & 5.941 \\ 
+  RMSPE & 58.060 & 57.493 & 59.036 & 58.243 & 58.038 \\ 
+  CI90 & 0.914 & 0.898 & 0.883 & 0.892 & 0.895 \\ 
+  CI90$_{OD}$ &  & 0.918 & 0.927 & 0.897 & 0.904 \\ 
+  CI90$_{WR}$ &  & 0.900 & 0.892 & 0.895 & 0.895 \\ 
+  CI90$_{TG}$ &  & 0.914 & 0.920 & 0.939 & 0.957 \\ 
+  CI90$_{TL}$ &  & 0.906 & 0.906 & 0.917 & 0.930 \\ 
+  fail rate & 0.000 & 0.000 & 0.000 & 0.000 & 0.000 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                        Simulation Experiment 2
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Simulation Experiment 2}
+
+\footnotesize
+\begin{table}[ht]
+\centering
+\begin{tabular}{rrrrrr}
+  \hline
+  \hline
+	&  & \multicolumn{4}{c}{Knots} \\ 
+ & SRS & $\begin{array}{c}K_C=3  \\ K_F=8 \end{array}$ & $\begin{array}{c}K_C=4  \\ K_F=14 \end{array}$ & $\begin{array}{c}K_C=5  \\ K_F=20 \end{array}$ & $\begin{array}{c}K_C=6  \\ K_F=26 \end{array}$ \\
+  \hline
+bias & 79.234 & -1.333 & -7.632 & 14.511 & 13.856 \\ 
+  RMSPE & 104.979 & 66.347 & 68.846 & 68.311 & 68.527 \\ 
+  CI90 & 0.726 & 0.876 & 0.860 & 0.891 & 0.889 \\ 
+  CI90$_{OD}$ &  & 0.908 & 0.928 & 0.901 & 0.902 \\ 
+  CI90$_{WR}$ &  & 0.888 & 0.868 & 0.894 & 0.891 \\ 
+  CI90$_{TG}$ &  & 0.902 & 0.903 & 0.952 & 0.980 \\ 
+  CI90$_{TL}$ &  & 0.895 & 0.880 & 0.927 & 0.940 \\ 
+  fail rate & 0.000 & 0.000 & 0.000 & 0.000 & 0.001 \\ 
+  \hline
+   \hline
+\end{tabular}
+\end{table}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
 %                        Simulation Experiment 3
 %-------------------------------------------------------------------------------
 
 \begin{frame}[fragile]
 \frametitle{Simulation Experiment 3}
 
+\footnotesize
 \begin{table}[ht]
 \centering
-\begin{tabular}{rrrrr}
+\begin{tabular}{rrrrrr}
   \hline
- & knots1 & knots2 & knots3 & knots4 \\ 
   \hline
-bias & -2.389 & -4.365 & -2.919 & -1.637 \\ 
-  RMSPE & 79.207 & 79.250 & 79.285 & 80.175 \\ 
-  CI90 & 0.775 & 0.772 & 0.781 & 0.777 \\ 
-  CI90OD & 0.801 & 0.783 & 0.789 & 0.782 \\ 
-  CI90WR & 0.918 & 0.906 & 0.865 & 0.837 \\ 
-  CI90TG & 0.923 & 0.930 & 0.929 & 0.946 \\ 
-  CI90TL & 0.871 & 0.883 & 0.878 & 0.903 \\ 
-  fail & 0.000 & 0.000 & 0.000 & 0.018 \\ 
+	&  & \multicolumn{4}{c}{Knots} \\ 
+ & SRS & $\begin{array}{c}K_C=3  \\ K_F=8 \end{array}$ & $\begin{array}{c}K_C=4  \\ K_F=14 \end{array}$ & $\begin{array}{c}K_C=5  \\ K_F=20 \end{array}$ & $\begin{array}{c}K_C=6  \\ K_F=26 \end{array}$ \\
+  \hline
+bias & 214.816 & -2.389 & -4.365 & -2.919 & -1.637 \\ 
+  RMSPE & 235.713 & 79.207 & 79.250 & 79.285 & 80.175 \\ 
+  CI90 & 0.774 & 0.775 & 0.772 & 0.781 & 0.777 \\ 
+  CI90$_{OD}$ &  & 0.801 & 0.783 & 0.789 & 0.782 \\ 
+  CI90$_{WR}$ &  & 0.918 & 0.906 & 0.865 & 0.837 \\ 
+  CI90$_{TG}$ &  & 0.923 & 0.930 & 0.929 & 0.946 \\ 
+  CI90$_{TL}$ &  & 0.871 & 0.883 & 0.878 & 0.903 \\ 
+  fail rate & 0.000 & 0.000 & 0.000 & 0.000 & 0.018 \\ 
    \hline
 \end{tabular}
 \end{table}
@@ -744,23 +830,39 @@ bias & -2.389 & -4.365 & -2.919 & -1.637 \\
 \begin{frame}[fragile]
 \frametitle{Simulation Experiment 4}
 
+\footnotesize
 \begin{table}[ht]
 \centering
-\begin{tabular}{rrrrr}
+\begin{tabular}{rrrrrr}
   \hline
- & knots1 & knots2 & knots3 & knots4 \\ 
   \hline
-bias & 5.179 & 3.440 & 7.139 & 14.536 \\ 
-  RMSPE & 60.403 & 61.021 & 61.808 & 67.601 \\ 
-  CI90 & 0.831 & 0.825 & 0.826 & 0.836 \\ 
-  CI90OD & 0.844 & 0.831 &  &  \\ 
-  CI90WR & 0.939 & 0.928 & 0.924 & 0.917 \\ 
-  CI90TG & 0.929 & 0.919 & 0.909 & 0.918 \\ 
-  CI90TL & 0.893 & 0.892 & 0.885 & 0.888 \\ 
-  fail & 0.000 & 0.000 & 0.000 & 0.013 \\ 
+	&  & \multicolumn{4}{c}{Knots} \\ 
+ & SRS & $\begin{array}{c}K_C=3  \\ K_F=8 \end{array}$ & $\begin{array}{c}K_C=5  \\ K_F=16 \end{array}$ & $\begin{array}{c}K_C=7  \\ K_F=24 \end{array}$ & $\begin{array}{c}K_C=9  \\ K_F=32 \end{array}$ \\
+  \hline
+bias & 148.523 & 5.179 & 3.440 & 7.287 & 14.629 \\ 
+  RMSPE & 163.516 & 60.403 & 61.021 & 62.102 & 64.136 \\ 
+  CI90 & 0.834 & 0.831 & 0.825 & 0.826 & 0.833 \\ 
+  CI90$_{OD}$ &  & 0.844 & 0.831 & 0.827 & 0.833 \\ 
+  CI90$_{WR}$ &  & 0.939 & 0.928 & 0.923 & 0.913 \\ 
+  CI90$_{TG}$ &  & 0.929 & 0.919 & 0.907 & 0.920 \\ 
+  CI90$_{TL}$ &  & 0.893 & 0.892 & 0.884 & 0.886 \\ 
+  fail rate & 0.000 & 0.000 & 0.000 & 0.000 & 0.242 \\ 
    \hline
 \end{tabular}
 \end{table}
+
+\end{frame}
+
+%-------------------------------------------------------------------------------
+%                        Simulation Experiment 5
+%-------------------------------------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Effect of $p$ in Trimmed Overdispersion Estimator}
+
+\begin{center}
+\includegraphics[width = .8\maxwidth]{figure/CI90TrimProp-plot}
+\end{center}
 
 \end{frame}
 
@@ -773,7 +875,7 @@ bias & 5.179 & 3.440 & 7.139 & 14.536 \\
 \begin{frame}[fragile]
 \frametitle{Real Example}
 
-	<<echo=FALSE, include = FALSE, cache = TRUE>>=
+	<<echo=FALSE, include = FALSE, cache = FALSE>>=
 		path <- system.file("rawdata/seals", package = "spPlotSampCourse")
 		outlineFile <- paste(path,"/","outline", sep = "")
 		outline <- readShapePoly(outlineFile)
@@ -795,8 +897,8 @@ bias & 5.179 & 3.440 & 7.139 & 14.536 \\
 		#  Run the function
 		#undebug(spCountSamp)
 		sCSout <- spCountSamp(counts ~ 1, outline, plots, 
-				nNodesRequestC = 6, nNodesRequestF = 25, 
-				percentZero = 75, nodeSetSeed = 101)
+				nNodesRequestC = 6, nNodesRequestF = 24, 
+				percentZero = 50, nodeSetSeed = 101)
 		summary(sCSout)
 		@
 
@@ -830,7 +932,7 @@ bias & 5.179 & 3.440 & 7.139 & 14.536 \\
 			qtiles, max(sCSout$Predictions$Predictions))
 		cramp <- rainbow(length(breaks) - 1, start = .66, end = .99)
 
-		image.spCountSamp(sCSout, breaks = breaks, col = cramp)
+		image(sCSout, breaks = breaks, col = cramp)
 		title("Fitted Prediction Surface", cex.main = 2)
 		plot(plots, add = TRUE)
 		plot(outline, add = TRUE)
@@ -872,10 +974,10 @@ summary(sCSout)
 %                        Goals
 %-------------------------------------------------------------------------------
 
-\section{summary}
+\section{Summary}
 \subsection{}
 \begin{frame}[fragile]
-\frametitle{Goals}
+\frametitle{Recall the Goals}
 
 \footnotesize
 	An estimator that is:
@@ -884,7 +986,7 @@ summary(sCSout)
 		\item for the actual number of seals, not the mean of some assumed process that generated the data, 
 		\item have a variance estimator with a population correction factor that shrinks to zero as the proportion of the study area that gets sampled goes to one, 
 		\item unbiased with valid confidence intervals, 
-		\item able to accommodate nonstationary variance throughout the area
+		\item able to accommodate nonstationary variance and excessive zeros throughout the area
 		\end{itemize}
 
 \end{frame}

@@ -5,19 +5,40 @@ opts_chunk$set(size = 'tiny')
 purl("CountSamp.Rnw") ## Dump all R code to a file
 
 
-## @knitr icyBayIntro-plot, fig.width=6, fig.height=4, echo=FALSE, include = FALSE, cache = TRUE
+## @knitr icyBayIntro-plot, fig.width=8, fig.height=8, echo=FALSE, include = FALSE, cache = TRUE
 library(spPlotSampCourse)
 path <- system.file("rawdata/seals", package = "spPlotSampCourse")
 outlineFile <- paste(path,"/","outline", sep = "")
 outline <- readShapePoly(outlineFile)
 plotsFile <- paste(path,"/","plots", sep = "")
 plots <- readShapePoly(plotsFile)
-par(mar = c(0.1,0.1,0.1,0.1))
+par(mar = c(0,0,0,0))
+plotsub <- plots[plots@data[,"counts"] > 0,]
 plot(outline)
-minmax <- plotPolygonsRGB(plots, colorCol = "counts", add = TRUE, border = par("bg"))
-addRGBRampLegend(minmax[,1], minmax[,2], 683353, 1182043, 684490, 1188985, 
-	printFormat = "2.0")
-text(686700, 1182800, "Icy Bay, Alaska, 2008", pos = 4)
+qtiles <- quantile(plotsub@data$counts, p = (1:3)/4)
+breaks <- c(min(plotsub@data$counts)-1e-10, 
+	qtiles, max(plotsub@data$counts))
+cramp <- c(rgb(0,0,1), rgb(.33,.6,.67), rgb(.67,.6,.33), rgb(1,0,0))
+ob <- plotsub
+colorCol <- "counts"
+plot(plotsub[plotsub@data$counts > breaks[1] & plotsub@data$counts <= breaks[2], ],
+	col = cramp[1], add = TRUE, border = par("bg"))
+plot(plotsub[plotsub@data$counts > breaks[2] & plotsub@data$counts <= breaks[3], ],
+	col = cramp[2], add = TRUE, border = par("bg"))
+plot(plotsub[plotsub@data$counts > breaks[3] & plotsub@data$counts <= breaks[4], ],
+	col = cramp[3], add = TRUE, border = par("bg"))
+plot(plotsub[plotsub@data$counts > breaks[4] & plotsub@data$counts <= breaks[5], ],
+	col = cramp[4], add = TRUE, border = par("bg"))
+plot(plots, add = TRUE)
+addBreakColorLegend(682464, 1181494, 684511, 1189428, 
+	breaks = breaks, colors = cramp, printFormat = "2.0", cex = 1.1)
+SpatialPolygonsRescale(layout.scale.bar(), offset = c(688240, 1181567),
+	scale = 5000, fill = c("transparent","black"), plot.grid = FALSE)
+text(688203,1182408,"0", cex = 1.5)
+text(693175,1182408,"5 km", cex = 1.5)
+SpatialPolygonsRescale(layout.north.arrow(), offset = c(697562,1193085),
+	scale = 2000, col = "green", plot.grid = FALSE)
+text(685332, 1196567, "Icy Bay, Alaska, 2008", pos = 4, cex = 2.5)
 
 
 ## @knitr irregSamples-plot, fig.width=6, fig.height=6, echo=FALSE, include = FALSE, dev = "tikz"
@@ -238,7 +259,7 @@ text(2.5,7.5,"$\\bkappa_{C,j}$", pos = 4, cex = 3)
 	abline(a = 0, b = 1, lwd = 5, lty = 2)
 
 
-## @knitr echo=FALSE, include = FALSE, cache = TRUE
+## @knitr echo=FALSE, include = FALSE, cache = FALSE
 	path <- system.file("rawdata/seals", package = "spPlotSampCourse")
 	outlineFile <- paste(path,"/","outline", sep = "")
 	outline <- readShapePoly(outlineFile)
@@ -260,8 +281,8 @@ text(2.5,7.5,"$\\bkappa_{C,j}$", pos = 4, cex = 3)
 	#  Run the function
 	#undebug(spCountSamp)
 	sCSout <- spCountSamp(counts ~ 1, outline, plots, 
-			nNodesRequestC = 6, nNodesRequestF = 25, 
-			percentZero = 75, nodeSetSeed = 101)
+			nNodesRequestC = 6, nNodesRequestF = 24, 
+			percentZero = 50, nodeSetSeed = 101)
 	summary(sCSout)
 
 

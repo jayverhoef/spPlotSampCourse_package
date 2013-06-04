@@ -1,4 +1,4 @@
-\frametitle {Goals}
+\frametitle {Recall the Goals}
 
 \footnotesize
 An estimator that is:
@@ -7,6 +7,6 @@ An estimator that is:
 \item for the actual number of seals, not the mean of some assumed process that generated the data,
 \item have a variance estimator with a population correction factor that shrinks to zero as the proportion of the study area that gets sampled goes to one,
 \item unbiased with valid confidence intervals,
-\item able to accommodate nonstationary variance throughout the area
+\item able to accommodate nonstationary variance and excessive zeros throughout the area
 \end{itemize}
 

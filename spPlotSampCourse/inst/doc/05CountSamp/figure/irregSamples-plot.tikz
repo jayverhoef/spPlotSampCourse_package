@@ -1,4 +1,4 @@
-% Created by tikzDevice version 0.6.2-92-0ad2792 on 2013-06-01 18:54:56
+% Created by tikzDevice version 0.6.2-92-0ad2792 on 2013-06-03 12:12:58
 % !TEX encoding = UTF-8 Unicode
 \documentclass[mathserif,compress]{beamer}
 \nonstopmode
@@ -119,13 +119,13 @@
 
 \path[draw=drawColor,line width= 2.0pt,line join=round,line cap=round,fill=fillColor] (143.20, 96.36) rectangle (210.12,163.28);
 
-\path[draw=drawColor,line width= 2.0pt,line join=round,line cap=round,fill=fillColor] (216.81,250.27) rectangle (283.73,317.19);
+\path[draw=drawColor,line width= 2.0pt,line join=round,line cap=round,fill=fillColor] (216.81,250.27) rectangle (283.73,317.18);
 
 \path[draw=drawColor,line width= 2.0pt,line join=round,line cap=round,fill=fillColor] ( 69.59,323.88) rectangle (136.51,390.79);
 
-\path[draw=drawColor,line width= 2.0pt,line join=round,line cap=round,fill=fillColor] (317.19, 49.52) rectangle (384.10,116.43);
+\path[draw=drawColor,line width= 2.0pt,line join=round,line cap=round,fill=fillColor] (317.18, 49.52) rectangle (384.10,116.43);
 
-\path[draw=drawColor,line width= 2.0pt,line join=round,line cap=round,fill=fillColor] (330.57,270.34) rectangle (397.49,337.26);
+\path[draw=drawColor,line width= 2.0pt,line join=round,line cap=round,fill=fillColor] (330.57,270.34) rectangle (397.48,337.26);
 
 \path[draw=drawColor,line width= 2.0pt,line join=round,line cap=round,fill=fillColor] ( 29.44, 29.44) rectangle ( 96.36, 96.36);
 
