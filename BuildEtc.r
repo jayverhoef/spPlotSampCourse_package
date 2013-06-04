@@ -26,7 +26,7 @@ Rcmd INSTALL --build splmm
 #github cloud commits
 cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package"
 git add .
-git commit -m 'update 2 June 2013 -- still adding content'
+git commit -m 'update 4 June 2013 -- all content added'
 git push github.spPlotSampCourse_package master
 git pull github.spPlotSampCourse_package master
 
@@ -44,4 +44,5 @@ git remote add github.spPlotSampCourse_package https://github.com/jayverhoef/spP
 git remote -v
 
 #clean up directory before committing it
+cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package"
 find . -type f -iname \*~ -delete
