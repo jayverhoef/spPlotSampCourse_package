@@ -42,7 +42,7 @@ Rcmd INSTALL --build spPlotSampCourse
 #github cloud commits
 cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package"
 git add .
-git commit -a -m 'running knitr on everything again, checking results'
+git commit -a -m 'final push for course'
 git push github.spPlotSampCourse_package master
 git pull github.spPlotSampCourse_package master
 
