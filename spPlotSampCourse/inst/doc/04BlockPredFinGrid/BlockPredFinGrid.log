@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.23)  28 MAY 2013 13:41
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.23)  4 JUN 2013 16:52
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_pack
-age/spPlotSampCourse/inst/doc/BlockPredFinGrid/BlockPredFinGrid.tex"}
+age/spPlotSampCourse/inst/doc/04BlockPredFinGrid/BlockPredFinGrid.tex"}
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.tex
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.tex
 (/usr/share/texmf/tex/latex/beamer/base/beamer.cls
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasercs.sty
 Package: beamerbasercs 2010/06/12 (rcs-revision c3821710bb40)
@@ -802,7 +802,7 @@ Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
 ))
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.aux)
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.aux)
 \openout1 = `BlockPredFinGrid.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 134.
@@ -901,9 +901,9 @@ LaTeX Info: Redefining \ref on input line 134.
 LaTeX Info: Redefining \pageref on input line 134.
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.out)
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.out)
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.out)
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.out)
 \@outlinefile=\write5
 \openout5 = `BlockPredFinGrid.out'.
 
@@ -972,7 +972,7 @@ tionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.nav)
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
 (hyperref)                setting the option has no effect on input line 140.
@@ -984,7 +984,7 @@ Package hyperref Warning: Option `pdfauthor' has already been used,
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb
 <figure/Introductory-plot.pdf, id=161, 722.7pt x 252.93997pt>
 File: figure/Introductory-plot.pdf Graphic file (type pdf)
 
@@ -996,12 +996,12 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
 ) [2
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/BlockPredFinGrid/figure/Introductory-plot.pdf>]
+inst/doc/04BlockPredFinGrid/figure/Introductory-plot.pdf>]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb
 LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
@@ -1036,7 +1036,7 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <6> not available
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
@@ -1053,7 +1053,7 @@ So I'll assume that you meant to type \cr instead.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1113,7 +1113,7 @@ or  <return>  to continue without it.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb
 ! Missing $ inserted.
 <inserted text> 
                 $
@@ -1171,7 +1171,7 @@ or  <return>  to continue without it.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb
 ! Missing $ inserted.
 <inserted text> 
                 $
@@ -1250,7 +1250,7 @@ or  <return>  to continue without it.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb
 Underfull \hbox (badness 10000) in paragraph at lines 6--6
 []\OT1/phv/m/n/10.95 Number of plant
  []
@@ -1279,12 +1279,12 @@ Overfull \hbox (85.18196pt too wide) in paragraph at lines 12--16
 ) [8
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/BlockPredFinGrid/figure/PlantSpGrid200-plot.jpg>]
+inst/doc/04BlockPredFinGrid/figure/PlantSpGrid200-plot.jpg>]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <6> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 5.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <6> not available
@@ -1296,7 +1296,7 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <6> not available
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb
 <figure/RandPatFixSamp1.jpg, id=675, 380.622pt x 381.1038pt>
 File: figure/RandPatFixSamp1.jpg Graphic file (type jpg)
 
@@ -1307,21 +1307,21 @@ File: figure/RandPatFixSamp2.jpg Graphic file (type jpg)
 <use figure/RandPatFixSamp2.jpg>) [10
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/BlockPredFinGrid/figure/RandPatFixSamp1.jpg> </media/Hitachi2GB/00NMML
-/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/BlockPredFinGrid/
-figure/RandPatFixSamp2.jpg>]
+inst/doc/04BlockPredFinGrid/figure/RandPatFixSamp1.jpg> </media/Hitachi2GB/00NM
+ML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/04BlockPredFinG
+rid/figure/RandPatFixSamp2.jpg>]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb) [11
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb) [11
 
 ]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 4.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
@@ -1333,68 +1333,68 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb) [13
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb) [13
 
 ]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb) [14
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb) [14
 
 ]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb) [15
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb) [15
 
 ]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb) [16
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb) [16
 
 ]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb) [17
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb) [17
 
 ]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb
 <figure/pmaiUnbalSamp.pdf, id=1150, 578.16pt x 578.16pt>
 File: figure/pmaiUnbalSamp.pdf Graphic file (type pdf)
 
 <use figure/pmaiUnbalSamp.pdf>) [18
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/BlockPredFinGrid/figure/pmaiUnbalSamp.pdf>]
+inst/doc/04BlockPredFinGrid/figure/pmaiUnbalSamp.pdf>]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb) [19
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb) [19
 
 ]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb) [20
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb) [20
 
 ]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb
 <figure/mooseStrat-plot.pdf, id=1334, 505.89pt x 289.08pt>
 File: figure/mooseStrat-plot.pdf Graphic file (type pdf)
 
@@ -1418,16 +1418,16 @@ Overfull \vbox (1.32764pt too high) detected at line 748
 [21
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/BlockPredFinGrid/figure/mooseStrat-plot.pdf> </media/Hitachi2GB/00NMML
-/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/BlockPredFinGrid/
-figure/mooseElev-plot.pdf> </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse
-_package/spPlotSampCourse/inst/doc/BlockPredFinGrid/figure/mooseCounts-plot.pdf
->]
+inst/doc/04BlockPredFinGrid/figure/mooseStrat-plot.pdf> </media/Hitachi2GB/00NM
+ML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/04BlockPredFinG
+rid/figure/mooseElev-plot.pdf> </media/Hitachi2GB/00NMML/RPackages/spPlotSampCo
+urse_package/spPlotSampCourse/inst/doc/04BlockPredFinGrid/figure/mooseCounts-pl
+ot.pdf>]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 5.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
@@ -1454,28 +1454,28 @@ m/n/6 (samples@data[, []"CENTRLAT"[]], samples@data[, []"CENTRLON"[]])[,[]
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb) [23
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb) [23
 
 ]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb) [24
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb) [24
 
 ]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb) [25
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb) [25
 
 ]
 \openout4 = `BlockPredFinGrid.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb
 Overfull \hbox (20.3093pt too wide) in paragraph at lines 16--16
 []\OT1/pcr/m/n/6 FPBK.strat <- []\OT1/pcr/b/n/6 data.frame[]\OT1/pcr/m/n/6 (Pre
 d = FPBK.H[, []"Pred"[]] + FPBK.L[, []"Pred"[]], PredSE = []\OT1/pcr/b/n/6 sqrt
@@ -1489,7 +1489,7 @@ d = FPBK.H[, []"Pred"[]] + FPBK.L[, []"Pred"[]], PredSE = []\OT1/pcr/b/n/6 sqrt
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb) [27
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.vrb) [27
 
 ]
 \tf@nav=\write6
@@ -1503,45 +1503,45 @@ nst/doc/BlockPredFinGrid/BlockPredFinGrid.vrb) [27
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPredFinGrid/BlockPredFinGrid.aux) ) 
+nst/doc/04BlockPredFinGrid/BlockPredFinGrid.aux) ) 
 Here is how much of TeX's memory you used:
  16556 strings out of 493848
- 310916 string characters out of 1152823
- 397829 words of memory out of 3000000
+ 311046 string characters out of 1152823
+ 397831 words of memory out of 3000000
  19186 multiletter control sequences out of 15000+50000
  56070 words of font info for 121 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 50i,19n,59p,601b,745s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts
-/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
-/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx6.pfb>
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/
-texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texmf-texlive/font
-s/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-texlive/fonts/type1
-/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmm
-i6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
-/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf
--texlive/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-texlive/f
-onts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/
-amsfonts/cm/cmr5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
-mr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr
-/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
-ts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.
-pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam10.pfb></
-usr/share/texmf-texlive/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texmf-te
-xlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/
-urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr
-8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/sha
-re/texmf-texlive/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-texlive/
-fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/p
-alatino/uplri8a.pfb>
-Output written on BlockPredFinGrid.pdf (27 pages, 1112643 bytes).
+ 50i,19n,59p,603b,745s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fon
+ts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx6.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-tex
+live/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+mmi6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmr5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
+9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+</usr/share/texmf-texlive/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texmf-
+texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type
+1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uh
+vr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/s
+hare/texmf-texlive/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-texliv
+e/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw
+/palatino/uplri8a.pfb>
+Output written on BlockPredFinGrid.pdf (27 pages, 1112653 bytes).
 PDF statistics:
  1879 PDF objects out of 2073 (max. 8388607)
  73 named destinations out of 1000 (max. 500000)

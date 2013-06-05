@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.23)  28 MAY 2013 13:55
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.23)  4 JUN 2013 16:49
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_pack
-age/spPlotSampCourse/inst/doc/BlockPred/BlockPred.tex"}
+age/spPlotSampCourse/inst/doc/03BlockPred/BlockPred.tex"}
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.tex
+nst/doc/03BlockPred/BlockPred.tex
 (/usr/share/texmf/tex/latex/beamer/base/beamer.cls
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasercs.sty
 Package: beamerbasercs 2010/06/12 (rcs-revision c3821710bb40)
@@ -802,7 +802,7 @@ Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
 ))
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.aux)
+nst/doc/03BlockPred/BlockPred.aux)
 \openout1 = `BlockPred.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
@@ -901,9 +901,9 @@ LaTeX Info: Redefining \ref on input line 133.
 LaTeX Info: Redefining \pageref on input line 133.
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.out)
+nst/doc/03BlockPred/BlockPred.out)
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.out)
+nst/doc/03BlockPred/BlockPred.out)
 \@outlinefile=\write5
 \openout5 = `BlockPred.out'.
 
@@ -972,7 +972,7 @@ tionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.nav)
+nst/doc/03BlockPred/BlockPred.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
 (hyperref)                setting the option has no effect on input line 139.
@@ -984,19 +984,19 @@ Package hyperref Warning: Option `pdfauthor' has already been used,
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb
+nst/doc/03BlockPred/BlockPred.vrb
 <figure/Introductory-plot.pdf, id=114, 722.7pt x 252.93997pt>
 File: figure/Introductory-plot.pdf Graphic file (type pdf)
 
 <use figure/Introductory-plot.pdf>) [2
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/BlockPred/figure/Introductory-plot.pdf>]
+inst/doc/03BlockPred/figure/Introductory-plot.pdf>]
 \openout4 = `BlockPred.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb
+nst/doc/03BlockPred/BlockPred.vrb
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 4.
 
@@ -1006,24 +1006,24 @@ File: figure/mf04pTempColoredCrop.pdf Graphic file (type pdf)
 <use figure/mf04pTempColoredCrop.pdf>) [3
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/BlockPred/figure/mf04pTempColoredCrop.pdf>]
+inst/doc/03BlockPred/figure/mf04pTempColoredCrop.pdf>]
 \openout4 = `BlockPred.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb
+nst/doc/03BlockPred/BlockPred.vrb
 <figure/Figure_BlockKriging120203.pdf, id=241, 867.24pt x 578.16pt>
 File: figure/Figure_BlockKriging120203.pdf Graphic file (type pdf)
 
 <use figure/Figure_BlockKriging120203.pdf>) [4
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/BlockPred/figure/Figure_BlockKriging120203.pdf>]
+inst/doc/03BlockPred/figure/Figure_BlockKriging120203.pdf>]
 \openout4 = `BlockPred.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb
+nst/doc/03BlockPred/BlockPred.vrb
 LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
@@ -1058,14 +1058,14 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <6> not available
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb) [6
+nst/doc/03BlockPred/BlockPred.vrb) [6
 
 ]
 \openout4 = `BlockPred.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb
+nst/doc/03BlockPred/BlockPred.vrb
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1112,7 +1112,7 @@ or  <return>  to continue without it.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb
+nst/doc/03BlockPred/BlockPred.vrb
 <figure/BlockPred-plot.pdf, id=450, 361.35pt x 361.35pt>
 File: figure/BlockPred-plot.pdf Graphic file (type pdf)
 
@@ -1122,12 +1122,12 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <5> not available
 ) [8
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/BlockPred/figure/BlockPred-plot.pdf>]
+inst/doc/03BlockPred/figure/BlockPred-plot.pdf>]
 \openout4 = `BlockPred.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb
+nst/doc/03BlockPred/BlockPred.vrb
 File: figure/BlockPred-plot.pdf Graphic file (type pdf)
  <use figure/BlockPred-plot.pdf>
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9> not available
@@ -1139,14 +1139,14 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9> not available
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb) [10
+nst/doc/03BlockPred/BlockPred.vrb) [10
 
 ]
 \openout4 = `BlockPred.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb
+nst/doc/03BlockPred/BlockPred.vrb
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1193,7 +1193,7 @@ or  <return>  to continue without it.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb
+nst/doc/03BlockPred/BlockPred.vrb
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <6> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 4.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <6> not available
@@ -1209,21 +1209,21 @@ File: figure/fixedPatternRandSamp2.jpg Graphic file (type jpg)
 <use figure/fixedPatternRandSamp2.jpg>) [12
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/BlockPred/figure/fixedPatternRandSamp1.jpg> </media/Hitachi2GB/00NMML/
-RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/BlockPred/figure/f
-ixedPatternRandSamp2.jpg>]
+inst/doc/03BlockPred/figure/fixedPatternRandSamp1.jpg> </media/Hitachi2GB/00NMM
+L/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/03BlockPred/figu
+re/fixedPatternRandSamp2.jpg>]
 \openout4 = `BlockPred.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb) [13
+nst/doc/03BlockPred/BlockPred.vrb) [13
 
 ]
 \openout4 = `BlockPred.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb
+nst/doc/03BlockPred/BlockPred.vrb
 <figure/CApolys-plot.pdf, id=764, 505.89pt x 578.16pt>
 File: figure/CApolys-plot.pdf Graphic file (type pdf)
 
@@ -1238,14 +1238,14 @@ Overfull \vbox (14.19344pt too high) detected at line 487
 [14
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/BlockPred/figure/CApolys-plot.pdf> </media/Hitachi2GB/00NMML/RPackages
-/spPlotSampCourse_package/spPlotSampCourse/inst/doc/BlockPred/figure/CA-predMap
-.pdf>]
+inst/doc/03BlockPred/figure/CApolys-plot.pdf> </media/Hitachi2GB/00NMML/RPackag
+es/spPlotSampCourse_package/spPlotSampCourse/inst/doc/03BlockPred/figure/CA-pre
+dMap.pdf>]
 \openout4 = `BlockPred.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb
+nst/doc/03BlockPred/BlockPred.vrb
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 5.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
@@ -1260,7 +1260,7 @@ LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <6> not available
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb
+nst/doc/03BlockPred/BlockPred.vrb
 <figure/colorPointsMeuseLogZN-plot.pdf, id=1115, 289.08pt x 433.62pt>
 File: figure/colorPointsMeuseLogZN-plot.pdf Graphic file (type pdf)
 
@@ -1279,22 +1279,22 @@ File: figure/meuseFFreq-plot.pdf Graphic file (type pdf)
 <use figure/meuseFFreq-plot.pdf>) [16
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/BlockPred/figure/colorPointsMeuseLogZN-plot.pdf> </media/Hitachi2GB/00
-NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/BlockPred/fig
-ure/meuseDist-plot.pdf> </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_pa
-ckage/spPlotSampCourse/inst/doc/BlockPred/figure/meuseFFreq-plot.pdf>]
+inst/doc/03BlockPred/figure/colorPointsMeuseLogZN-plot.pdf> </media/Hitachi2GB/
+00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/03BlockPred
+/figure/meuseDist-plot.pdf> </media/Hitachi2GB/00NMML/RPackages/spPlotSampCours
+e_package/spPlotSampCourse/inst/doc/03BlockPred/figure/meuseFFreq-plot.pdf>]
 \openout4 = `BlockPred.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb) [17
+nst/doc/03BlockPred/BlockPred.vrb) [17
 
 ]
 \openout4 = `BlockPred.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.vrb) [18
+nst/doc/03BlockPred/BlockPred.vrb) [18
 
 ]
 \tf@nav=\write6
@@ -1308,37 +1308,37 @@ nst/doc/BlockPred/BlockPred.vrb) [18
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/BlockPred/BlockPred.aux) ) 
+nst/doc/03BlockPred/BlockPred.aux) ) 
 Here is how much of TeX's memory you used:
  16435 strings out of 493848
- 307136 string characters out of 1152823
- 385598 words of memory out of 3000000
+ 307230 string characters out of 1152823
+ 385602 words of memory out of 3000000
  19121 multiletter control sequences out of 15000+50000
  44521 words of font info for 102 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 50i,19n,59p,587b,745s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/bas
-e/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/t
-exmf-texlive/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmmib10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pf
-b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-texl
-ive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/fonts/type1/public/
-amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmsy9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam10.
-pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/te
-xmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/
-type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helveti
-c/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvro8a.pfb></u
-sr/share/texmf-texlive/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-te
-xlive/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/fonts/type1
-/urw/palatino/uplri8a.pfb>
-Output written on BlockPred.pdf (18 pages, 1816773 bytes).
+ 50i,19n,59p,589b,745s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/b
+ase/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
+/cm/cmmib10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmsy9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam1
+0.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/
+texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/font
+s/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helve
+tic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvro8a.pfb><
+/usr/share/texmf-texlive/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-
+texlive/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/fonts/typ
+e1/urw/palatino/uplri8a.pfb>
+Output written on BlockPred.pdf (18 pages, 1816791 bytes).
 PDF statistics:
  1351 PDF objects out of 1440 (max. 8388607)
  45 named destinations out of 1000 (max. 500000)

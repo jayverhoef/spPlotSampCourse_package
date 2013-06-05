@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.23)  28 MAY 2013 15:06
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.23)  4 JUN 2013 16:49
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_pack
-age/spPlotSampCourse/inst/doc/IntroToSpatialStat/IntroToSpatialStat.tex"}
+age/spPlotSampCourse/inst/doc/02IntroToSpatialStat/IntroToSpatialStat.tex"}
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.tex
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.tex
 (/usr/share/texmf/tex/latex/beamer/base/beamer.cls
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasercs.sty
 Package: beamerbasercs 2010/06/12 (rcs-revision c3821710bb40)
@@ -802,7 +802,7 @@ Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
 ))
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.aux)
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.aux)
 \openout1 = `IntroToSpatialStat.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 130.
@@ -901,9 +901,9 @@ LaTeX Info: Redefining \ref on input line 130.
 LaTeX Info: Redefining \pageref on input line 130.
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.out)
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.out)
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.out)
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.out)
 \@outlinefile=\write5
 \openout5 = `IntroToSpatialStat.out'.
 
@@ -972,7 +972,7 @@ tionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.nav)
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
 (hyperref)                setting the option has no effect on input line 135.
@@ -984,7 +984,7 @@ Package hyperref Warning: Option `pdfauthor' has already been used,
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb
 LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
@@ -1010,7 +1010,7 @@ Overfull \vbox (37.76256pt too high) detected at line 195
 [2
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/CA-predMap.pdf>]
+inst/doc/02IntroToSpatialStat/figure/CA-predMap.pdf>]
 <figure/pieChart.jpeg, id=499, 608.2725pt x 454.69875pt>
 File: figure/pieChart.jpeg Graphic file (type jpg)
 
@@ -1021,17 +1021,17 @@ File: figure/voteMap.jpg Graphic file (type jpg)
 <use figure/voteMap.jpg> [3
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/pieChart.jpeg> </media/Hitachi2GB/00NMML/RPa
-ckages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/IntroToSpatialStat/fi
-gure/voteMap.jpg>]
+inst/doc/02IntroToSpatialStat/figure/pieChart.jpeg> </media/Hitachi2GB/00NMML/R
+Packages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/02IntroToSpatialSta
+t/figure/voteMap.jpg>]
 <figure/statModInfer.jpeg, id=569, 1182.4175pt x 721.69624pt>
 File: figure/statModInfer.jpeg Graphic file (type jpg)
 
 <use figure/statModInfer.jpeg> [4
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/statModInfer.jpeg>] <figure/airplane1.jpg, i
-d=633, 250.0542pt x 211.5102pt>
+inst/doc/02IntroToSpatialStat/figure/statModInfer.jpeg>] <figure/airplane1.jpg,
+ id=633, 250.0542pt x 211.5102pt>
 File: figure/airplane1.jpg Graphic file (type jpg)
 
 <use figure/airplane1.jpg>
@@ -1045,16 +1045,16 @@ Overfull \vbox (9.6406pt too high) detected at line 268
 [5
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/airplane1.jpg> </media/Hitachi2GB/00NMML/RPa
-ckages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/IntroToSpatialStat/fi
-gure/airplane2.jpg>]
+inst/doc/02IntroToSpatialStat/figure/airplane1.jpg> </media/Hitachi2GB/00NMML/R
+Packages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/02IntroToSpatialSta
+t/figure/airplane2.jpg>]
 <figure/repSpModInfer.jpg, id=698, 723.94603pt x 446.48161pt>
 File: figure/repSpModInfer.jpg Graphic file (type jpg)
 
 <use figure/repSpModInfer.jpg> [6
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/repSpModInfer.jpg>]
+inst/doc/02IntroToSpatialStat/figure/repSpModInfer.jpg>]
 Overfull \hbox (0.69167pt too wide) detected at line 315
 \OML/cmm/m/it/10.95 ^^L[] \OT1/cmr/m/n/10.95 + \OML/cmm/m/it/10.95 ^^\[] \OT1/c
 mr/m/n/10.95 + \OML/cmm/m/it/10.95 ^^N[] \OT1/cmr/m/n/10.95 + (\OML/cmm/m/it/10
@@ -1100,16 +1100,16 @@ Overfull \vbox (10.56184pt too high) detected at line 359
 [8
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/autCovGraph.pdf> </media/Hitachi2GB/00NMML/R
-Packages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/IntroToSpatialStat/
-figure/sCalOzoneDistances1.jpg> </media/Hitachi2GB/00NMML/RPackages/spPlotSampC
-ourse_package/spPlotSampCourse/inst/doc/IntroToSpatialStat/figure/sCalOzoneDist
-ances2.jpg>]
+inst/doc/02IntroToSpatialStat/figure/autCovGraph.pdf> </media/Hitachi2GB/00NMML
+/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/02IntroToSpatialS
+tat/figure/sCalOzoneDistances1.jpg> </media/Hitachi2GB/00NMML/RPackages/spPlotS
+ampCourse_package/spPlotSampCourse/inst/doc/02IntroToSpatialStat/figure/sCalOzo
+neDistances2.jpg>]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 5.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
@@ -1124,62 +1124,62 @@ File: figure/AutoCor-DataFig.pdf Graphic file (type pdf)
 <use figure/AutoCor-DataFig.pdf>) [9
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/AutoCor-DataFig.pdf>]
+inst/doc/02IntroToSpatialStat/figure/AutoCor-DataFig.pdf>]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb
 <figure/AutoCor-ModelFig.pdf, id=977, 794.97pt x 433.62pt>
 File: figure/AutoCor-ModelFig.pdf Graphic file (type pdf)
 
 <use figure/AutoCor-ModelFig.pdf>) [10
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/AutoCor-ModelFig.pdf>]
+inst/doc/02IntroToSpatialStat/figure/AutoCor-ModelFig.pdf>]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb
 <figure/AutoCor-ProcessFig.pdf, id=1046, 794.97pt x 433.62pt>
 File: figure/AutoCor-ProcessFig.pdf Graphic file (type pdf)
 
 <use figure/AutoCor-ProcessFig.pdf>) [11
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/AutoCor-ProcessFig.pdf>]
+inst/doc/02IntroToSpatialStat/figure/AutoCor-ProcessFig.pdf>]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb
 <figure/AutoCor-StatisticFig.pdf, id=1116, 794.97pt x 433.62pt>
 File: figure/AutoCor-StatisticFig.pdf Graphic file (type pdf)
 
 <use figure/AutoCor-StatisticFig.pdf>) [12
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/AutoCor-StatisticFig.pdf>]
+inst/doc/02IntroToSpatialStat/figure/AutoCor-StatisticFig.pdf>]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb) [13
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb) [13
 
 ]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb) [14
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb) [14
 
 ]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb
 Overfull \hbox (47.63515pt too wide) in paragraph at lines 5--12
 []$[]$| 
  []
@@ -1217,26 +1217,26 @@ Overfull \vbox (7.33394pt too high) detected at line 591
 [15
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/AutoCor-EstPredFig1.pdf> </media/Hitachi2GB/
-00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/IntroToSpat
-ialStat/figure/AutoCor-EstPredFig2.pdf>]
+inst/doc/02IntroToSpatialStat/figure/AutoCor-EstPredFig1.pdf> </media/Hitachi2G
+B/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/02IntroTo
+SpatialStat/figure/AutoCor-EstPredFig2.pdf>]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb
 <figure/Notation-plot.pdf, id=1393, 361.35pt x 361.35pt>
 File: figure/Notation-plot.pdf Graphic file (type pdf)
 
 <use figure/Notation-plot.pdf>) [16
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/Notation-plot.pdf>]
+inst/doc/02IntroToSpatialStat/figure/Notation-plot.pdf>]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb
 File: figure/Notation-plot.pdf Graphic file (type pdf)
 
 <use figure/Notation-plot.pdf>) [17
@@ -1246,7 +1246,7 @@ File: figure/Notation-plot.pdf Graphic file (type pdf)
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb
 <figure/colorPointsCAOzone-plot.pdf, id=1542, 289.08pt x 433.62pt>
 File: figure/colorPointsCAOzone-plot.pdf Graphic file (type pdf)
 
@@ -1261,14 +1261,14 @@ Overfull \vbox (22.11028pt too high) detected at line 679
 [18
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/colorPointsCAOzone-plot.pdf> </media/Hitachi
-2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/IntroTo
-SpatialStat/figure/colorPointsMeuseLogZN-plot.pdf>]
+inst/doc/02IntroToSpatialStat/figure/colorPointsCAOzone-plot.pdf> </media/Hitac
+hi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/02Int
+roToSpatialStat/figure/colorPointsMeuseLogZN-plot.pdf>]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb
 <figure/rawSIDS-plot.pdf, id=1619, 505.89pt x 108.405pt>
 File: figure/rawSIDS-plot.pdf Graphic file (type pdf)
 
@@ -1284,14 +1284,14 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 9--21
 ) [19
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/rawSIDS-plot.pdf> </media/Hitachi2GB/00NMML/
-RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/IntroToSpatialStat
-/figure/fireDiv-plot.pdf>]
+inst/doc/02IntroToSpatialStat/figure/rawSIDS-plot.pdf> </media/Hitachi2GB/00NMM
+L/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/02IntroToSpatial
+Stat/figure/fireDiv-plot.pdf>]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb
 <figure/anemones-plot.pdf, id=1695, 361.35pt x 361.35pt>
 File: figure/anemones-plot.pdf Graphic file (type pdf)
 
@@ -1302,23 +1302,24 @@ File: figure/ponderosa-plot.pdf Graphic file (type pdf)
 <use figure/ponderosa-plot.pdf>) [20
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/anemones-plot.pdf> </media/Hitachi2GB/00NMML
-/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/IntroToSpatialSta
-t/figure/ponderosa-plot.pdf>]
+inst/doc/02IntroToSpatialStat/figure/anemones-plot.pdf> </media/Hitachi2GB/00NM
+ML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/02IntroToSpatia
+lStat/figure/ponderosa-plot.pdf>]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb) [21
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb) [21
 
 ]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb
 File: figure/CA-predMap.pdf Graphic file (type pdf)
- <use figure/CA-predMap.pdf>
+
+<use figure/CA-predMap.pdf>
 <figure/CA-predSEMap.pdf, id=1836, 289.08pt x 433.62pt>
 File: figure/CA-predSEMap.pdf Graphic file (type pdf)
 
@@ -1329,12 +1330,12 @@ Overfull \vbox (25.4469pt too high) detected at line 787
 [22
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/CA-predSEMap.pdf>]
+inst/doc/02IntroToSpatialStat/figure/CA-predSEMap.pdf>]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb
 <figure/lizardCA-plot.pdf, id=1907, 361.35pt x 361.35pt>
 File: figure/lizardCA-plot.pdf Graphic file (type pdf)
 
@@ -1345,14 +1346,14 @@ File: figure/whiptailHead.jpg Graphic file (type jpg)
 <use figure/whiptailHead.jpg>) [23
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/lizardCA-plot.pdf> </media/Hitachi2GB/00NMML
-/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/IntroToSpatialSta
-t/figure/whiptailHead.jpg>]
+inst/doc/02IntroToSpatialStat/figure/lizardCA-plot.pdf> </media/Hitachi2GB/00NM
+ML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/02IntroToSpatia
+lStat/figure/whiptailHead.jpg>]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb
 <figure/lizardPoints-plot.pdf, id=1979, 361.35pt x 361.35pt>
 File: figure/lizardPoints-plot.pdf Graphic file (type pdf)
 
@@ -1371,16 +1372,16 @@ Overfull \vbox (2.98256pt too high) detected at line 861
 [24
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/lizardPoints-plot.pdf> </media/Hitachi2GB/00
-NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/IntroToSpatia
-lStat/figure/lizardHist-plot.pdf> </media/Hitachi2GB/00NMML/RPackages/spPlotSam
-pCourse_package/spPlotSampCourse/inst/doc/IntroToSpatialStat/figure/lizardBox-p
-lot.pdf>]
+inst/doc/02IntroToSpatialStat/figure/lizardPoints-plot.pdf> </media/Hitachi2GB/
+00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/02IntroToSp
+atialStat/figure/lizardHist-plot.pdf> </media/Hitachi2GB/00NMML/RPackages/spPlo
+tSampCourse_package/spPlotSampCourse/inst/doc/02IntroToSpatialStat/figure/lizar
+dBox-plot.pdf>]
 \openout4 = `IntroToSpatialStat.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.vrb) [25
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.vrb) [25
 
 ]
 <figure/OzarkDesign1Crop.pdf, id=2126, 706.64pt x 348.30125pt>
@@ -1389,14 +1390,14 @@ File: figure/OzarkDesign1Crop.pdf Graphic file (type pdf)
 <use figure/OzarkDesign1Crop.pdf> [26
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/OzarkDesign1Crop.pdf>] <figure/OzarkDesign2C
-rop.pdf, id=2209, 694.595pt x 361.35pt>
+inst/doc/02IntroToSpatialStat/figure/OzarkDesign1Crop.pdf>] <figure/OzarkDesign
+2Crop.pdf, id=2209, 694.595pt x 361.35pt>
 File: figure/OzarkDesign2Crop.pdf Graphic file (type pdf)
 
 <use figure/OzarkDesign2Crop.pdf> [27
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/OzarkDesign2Crop.pdf>]
+inst/doc/02IntroToSpatialStat/figure/OzarkDesign2Crop.pdf>]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <5> not available
 (Font)              Font shape `OT1/ppl/b/it' tried instead on input line 993.
  <figure/fireDivOrig-plot.pdf, id=2312, 433.62pt x 216.81pt>
@@ -1407,7 +1408,7 @@ File: figure/fireDiv-plot.pdf Graphic file (type pdf)
  <use figure/fireDiv-plot.pdf> [28
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/fireDivOrig-plot.pdf>]
+inst/doc/02IntroToSpatialStat/figure/fireDivOrig-plot.pdf>]
 <figure/mooseSurvey20A.jpg, id=2384, 559.16934pt x 432.03745pt>
 File: figure/mooseSurvey20A.jpg Graphic file (type jpg)
 
@@ -1419,7 +1420,7 @@ Overfull \hbox (8.53592pt too wide) in paragraph at lines 1014--1014
 [29
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/mooseSurvey20A.jpg>]
+inst/doc/02IntroToSpatialStat/figure/mooseSurvey20A.jpg>]
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1059.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <7> not available
@@ -1445,7 +1446,7 @@ Overfull \hbox (12.0pt too wide) in paragraph at lines 1059--1059
 [30
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/IntroToSpatialStat/figure/MooseSurvey20APlots.jpg>]
+inst/doc/02IntroToSpatialStat/figure/MooseSurvey20APlots.jpg>]
 \tf@nav=\write6
 \openout6 = `IntroToSpatialStat.nav'.
 
@@ -1457,36 +1458,36 @@ inst/doc/IntroToSpatialStat/figure/MooseSurvey20APlots.jpg>]
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/IntroToSpatialStat/IntroToSpatialStat.aux) ) 
+nst/doc/02IntroToSpatialStat/IntroToSpatialStat.aux) ) 
 Here is how much of TeX's memory you used:
  16633 strings out of 493848
- 312199 string characters out of 1152823
- 410679 words of memory out of 3000000
+ 312297 string characters out of 1152823
+ 410681 words of memory out of 3000000
  19270 multiletter control sequences out of 15000+50000
  38718 words of font info for 99 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 50i,22n,59p,605b,745s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/f
-onts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx8.
-pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/te
-xmf-texlive/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/public
-/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
-/cmmib10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cmextra/cmmi
-b8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/pub
-lic/amsfonts/symbols/msam10.pfb></usr/share/texmf-texlive/fonts/type1/urw/couri
-er/ucrb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></us
-r/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-tex
-live/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-texlive/fonts/type1/
-urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr
-i8a.pfb>
-Output written on IntroToSpatialStat.pdf (30 pages, 2238665 bytes).
+ 50i,22n,59p,607b,745s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive
+/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfo
+nts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx
+8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/
+texmf-texlive/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmmib10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cmextra/cm
+mib8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/symbols/msam10.pfb></usr/share/texmf-texlive/fonts/type1/urw/cou
+rier/ucrb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></
+usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-t
+exlive/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texmf-texlive/fonts/type
+1/urw/palatino/uplr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/up
+lri8a.pfb>
+Output written on IntroToSpatialStat.pdf (30 pages, 2238711 bytes).
 PDF statistics:
  2593 PDF objects out of 2984 (max. 8388607)
  78 named destinations out of 1000 (max. 500000)

@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.23)  25 MAY 2013 10:48
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.23)  4 JUN 2013 16:48
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_pack
-age/spPlotSampCourse/inst/doc/Introduction/Introduction.tex"}
+age/spPlotSampCourse/inst/doc/01Introduction/Introduction.tex"}
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/Introduction/Introduction.tex
+nst/doc/01Introduction/Introduction.tex
 (/usr/share/texmf/tex/latex/beamer/base/beamer.cls
 (/usr/share/texmf/tex/latex/beamer/base/beamerbasercs.sty
 Package: beamerbasercs 2010/06/12 (rcs-revision c3821710bb40)
@@ -798,7 +798,7 @@ Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
 ))
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/Introduction/Introduction.aux)
+nst/doc/01Introduction/Introduction.aux)
 \openout1 = `Introduction.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
@@ -895,9 +895,9 @@ LaTeX Info: Redefining \ref on input line 69.
 LaTeX Info: Redefining \pageref on input line 69.
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/Introduction/Introduction.out)
+nst/doc/01Introduction/Introduction.out)
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/Introduction/Introduction.out)
+nst/doc/01Introduction/Introduction.out)
 \@outlinefile=\write5
 \openout5 = `Introduction.out'.
 
@@ -970,7 +970,7 @@ tionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/Introduction/Introduction.nav)
+nst/doc/01Introduction/Introduction.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
 (hyperref)                setting the option has no effect on input line 74.
@@ -982,7 +982,7 @@ Package hyperref Warning: Option `pdfauthor' has already been used,
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/Introduction/Introduction.vrb
+nst/doc/01Introduction/Introduction.vrb
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
@@ -1013,12 +1013,12 @@ Overfull \hbox (5.69048pt too wide) in paragraph at lines 20--22
 ) [2
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/Introduction/figure/SealInWater.pdf>]
+inst/doc/01Introduction/figure/SealInWater.pdf>]
 \openout4 = `Introduction.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/Introduction/Introduction.vrb
+nst/doc/01Introduction/Introduction.vrb
 <figure/airplane.jpeg, id=98, 331.7193pt x 218.9781pt>
 File: figure/airplane.jpeg Graphic file (type jpg)
 
@@ -1042,15 +1042,15 @@ Overfull \vbox (10.08818pt too high) detected at line 139
 [3
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/Introduction/figure/airplane.jpeg> </media/Hitachi2GB/00NMML/RPackages
-/spPlotSampCourse_package/spPlotSampCourse/inst/doc/Introduction/figure/aerialP
-hoto.jpeg> </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotS
-ampCourse/inst/doc/Introduction/figure/cameras.jpeg>]
+inst/doc/01Introduction/figure/airplane.jpeg> </media/Hitachi2GB/00NMML/RPackag
+es/spPlotSampCourse_package/spPlotSampCourse/inst/doc/01Introduction/figure/aer
+ialPhoto.jpeg> </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spP
+lotSampCourse/inst/doc/01Introduction/figure/cameras.jpeg>]
 \openout4 = `Introduction.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/Introduction/Introduction.vrb
+nst/doc/01Introduction/Introduction.vrb
 <figure/SuperCub.jpeg, id=132, 451.9284pt x 339.1872pt>
 File: figure/SuperCub.jpeg Graphic file (type jpg)
 
@@ -1073,22 +1073,22 @@ Overfull \vbox (14.29906pt too high) detected at line 160
 [4
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/Introduction/figure/SuperCub.jpeg> </media/Hitachi2GB/00NMML/RPackages
-/spPlotSampCourse_package/spPlotSampCourse/inst/doc/Introduction/figure/vaporTr
-ail.jpeg> </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSa
-mpCourse/inst/doc/Introduction/figure/Moose.jpeg>]
+inst/doc/01Introduction/figure/SuperCub.jpeg> </media/Hitachi2GB/00NMML/RPackag
+es/spPlotSampCourse_package/spPlotSampCourse/inst/doc/01Introduction/figure/vap
+orTrail.jpeg> </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPl
+otSampCourse/inst/doc/01Introduction/figure/Moose.jpeg>]
 \openout4 = `Introduction.vrb'.
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/Introduction/Introduction.vrb
+nst/doc/01Introduction/Introduction.vrb
 <figure/Introductory-plot.pdf, id=166, 722.7pt x 252.93997pt>
 File: figure/Introductory-plot.pdf Graphic file (type pdf)
 
 <use figure/Introductory-plot.pdf>) [5
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
-inst/doc/Introduction/figure/Introductory-plot.pdf>]
+inst/doc/01Introduction/figure/Introductory-plot.pdf>]
 \tf@nav=\write6
 \openout6 = `Introduction.nav'.
 
@@ -1100,22 +1100,22 @@ inst/doc/Introduction/figure/Introductory-plot.pdf>]
 
 
 (/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/i
-nst/doc/Introduction/Introduction.aux) ) 
+nst/doc/01Introduction/Introduction.aux) ) 
 Here is how much of TeX's memory you used:
  16087 strings out of 493848
- 300305 string characters out of 1152823
- 371021 words of memory out of 3000000
+ 300347 string characters out of 1152823
+ 371025 words of memory out of 3000000
  18879 multiletter control sequences out of 15000+50000
  19918 words of font info for 51 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 50i,19n,59p,573b,745s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvi
-ps/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.
-pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam10.pfb></
-usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-t
-exlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type
-1/urw/helvetic/uhvro8a.pfb>
-Output written on Introduction.pdf (5 pages, 759096 bytes).
+ 50i,19n,59p,575b,745s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/d
+vips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss1
+0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+</usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf
+-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/urw/helvetic/uhvro8a.pfb>
+Output written on Introduction.pdf (5 pages, 759100 bytes).
 PDF statistics:
  235 PDF objects out of 1000 (max. 8388607)
  13 named destinations out of 1000 (max. 500000)
