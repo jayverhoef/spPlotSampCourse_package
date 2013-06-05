@@ -10,10 +10,26 @@ R CMD build spPlotSampCourse
 R CMD INSTALL spPlotSampCourse_1.0.tar.gz
 
 # knitr
-cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/05CountSamp"
+cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/01Introduction"
+R
+library(knitr)
+knit("Introduction.Rnw")
+cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/02IntroToSpatialStat"
 R
 library(knitr)
 knit("IntroToSpatialStat.Rnw")
+cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/03BlockPred"
+R
+library(knitr)
+knit("BlockPred.Rnw")
+cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/04BlockPredFinGrid"
+R
+library(knitr)
+knit("BlockPredFinGrid.Rnw")
+cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/inst/doc/05CountSamp"
+R
+library(knitr)
+knit("CountSamp.Rnw")
 
 # windows 32-bit using VirtualBox
 cd /home/jay/00BoiseCorvallis/splmm_package
@@ -26,7 +42,7 @@ Rcmd INSTALL --build splmm
 #github cloud commits
 cd "/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package"
 git add .
-git commit -m 'update 4 June 2013 -- all content added'
+git commit -a -m 'running knitr on everything again, checking results'
 git push github.spPlotSampCourse_package master
 git pull github.spPlotSampCourse_package master
 

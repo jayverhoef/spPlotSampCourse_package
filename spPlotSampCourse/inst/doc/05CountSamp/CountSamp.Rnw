@@ -711,7 +711,7 @@ where \\
 	\item 
 	$\widehat{\var}_{TG}(\widehat{T}(A);p) = \omega_{TG}(p)\widetilde{\var}(\widehat{T}(A))$
 	\item 
-$\widehat{\var}_{TL}(\widehat{T}(A);p) = \frac{|\cU|}{n_p}\sum_{j=1}^{n_p}\exp(\bx_{\hat{\brho}}(\bu_j)\upp\hat{\bbeta})\times$ $\max(1,\omega_{TG}(p)I(\exp(\bx(\bs_j)\upp \hat{\bbeta}) \ge \phi_{(\lfloor np \rfloor)}) + $  $\bd\upp\left[ |B| \sum_{i=1}^{n} \bx(\bs_i)\bx({\bs_i})\upp\exp(\bx(\bs_i)\upp \hat{\bbeta}) \right]\upi\bd $ \\
+$\widehat{\var}_{TL}(\widehat{T}(A);p) = \frac{|\cU|}{n_p}\sum_{j=1}^{n_p}\exp(\bx_{\hat{\brho}}(\bu_j)\upp\hat{\bbeta})\times$ $\max(1,\omega_{TG}(p)I(\exp(\bx(\bs_j)\upp \hat{\bbeta}) \ge \phi_{(\lfloor np \rfloor)}) + $ \\ $((1-p)\omega_{TG}(p) + p) \times$ $\bd\upp\left[ |B| \sum_{i=1}^{n} \bx(\bs_i)\bx({\bs_i})\upp\exp(\bx(\bs_i)\upp \hat{\bbeta}) \right]\upi\bd $ \\
 where $I(\cdot)$ is the indicator function
 	\end{itemize}
 
@@ -875,7 +875,8 @@ bias & 148.523 & 5.179 & 3.440 & 7.287 & 14.629 \\
 \begin{frame}[fragile]
 \frametitle{Real Example}
 
-	<<echo=FALSE, include = FALSE, cache = FALSE>>=
+	<<echo=FALSE, include = FALSE, cache = TRUE>>=
+		library(spPlotSampCourse)
 		path <- system.file("rawdata/seals", package = "spPlotSampCourse")
 		outlineFile <- paste(path,"/","outline", sep = "")
 		outline <- readShapePoly(outlineFile)

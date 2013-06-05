@@ -259,7 +259,8 @@ text(2.5,7.5,"$\\bkappa_{C,j}$", pos = 4, cex = 3)
 	abline(a = 0, b = 1, lwd = 5, lty = 2)
 
 
-## @knitr echo=FALSE, include = FALSE, cache = FALSE
+## @knitr echo=FALSE, include = FALSE, cache = TRUE
+	library(spPlotSampCourse)
 	path <- system.file("rawdata/seals", package = "spPlotSampCourse")
 	outlineFile <- paste(path,"/","outline", sep = "")
 	outline <- readShapePoly(outlineFile)
@@ -301,7 +302,7 @@ plot(sCSout$convexPolyKnotsFine, add = TRUE, lwd = 3, border = rgb(.2,.8,.2))
 		qtiles, max(sCSout$Predictions$Predictions))
 	cramp <- rainbow(length(breaks) - 1, start = .66, end = .99)
 
-	image.spCountSamp(sCSout, breaks = breaks, col = cramp)
+	image(sCSout, breaks = breaks, col = cramp)
 	title("Fitted Prediction Surface", cex.main = 2)
 	plot(plots, add = TRUE)
 	plot(outline, add = TRUE)

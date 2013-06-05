@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.23)  3 JUN 2013 12:19
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.4.23)  4 JUN 2013 16:45
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_pack
@@ -1264,11 +1264,7 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 686.
 LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ppl/b/n' tried instead on input line 686.
-
-Overfull \vbox (4.82387pt too high) detected at line 686
- []
-
-[25
+ [25
 
  </media/Hitachi2GB/00NMML/RPackages/spPlotSampCourse_package/spPlotSampCourse/
 inst/doc/05CountSamp/figure/CI90TrimProp-plot.pdf>]
@@ -1371,7 +1367,7 @@ texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/typ
 e1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/
 uplb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/palatino/uplr8a.pfb></usr/
 share/texmf-texlive/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on CountSamp.pdf (29 pages, 1310018 bytes).
+Output written on CountSamp.pdf (29 pages, 1309871 bytes).
 PDF statistics:
  2115 PDF objects out of 2487 (max. 8388607)
  73 named destinations out of 1000 (max. 500000)
