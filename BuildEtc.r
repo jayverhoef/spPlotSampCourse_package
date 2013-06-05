@@ -32,8 +32,8 @@ library(knitr)
 knit("CountSamp.Rnw")
 
 # windows 32-bit using VirtualBox
-cd /home/jay/00BoiseCorvallis/splmm_package
-Rcmd INSTALL --build splmm
+cd E:\00NMML\RPackages\spPlotSampCourse_package
+Rcmd INSTALL --build spPlotSampCourse
 
 #-------------------------------------------------------------------------------
 #                    GITHUB
